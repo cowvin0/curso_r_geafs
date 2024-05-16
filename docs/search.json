@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "gabriel_curso_r.html#o-que-são-pacotes-1",
+    "href": "gabriel_curso_r.html#o-que-são-pacotes-1",
+    "title": "Curso R",
+    "section": "O que são pacotes",
+    "text": "O que são pacotes\nA linguagem base do R vem com inúmeras funções implementadas para operações numéricas, análise estatística, gráficos para visualização e muitos outros. Essas funções da própria linguagem são conhecidas como built-in. No entanto, é possível utilizar funcionalidades implementadas por outros usuários da linguagem. Para isso, podemos instalar pacotes.\nOs pacotes em R e muitas outras linguagens são um conjunto de funcionalidades implementadas por usuários da própria linguagem. Por exemplo, um dos pacotes mais conhecidos para visualização de gráficos é o ggplot2, que foi implementada por Hadley Wickham. Este pacote implementa uma série de funções para visualização estatística, permitindo criar Box-plots, gráficos de dispersão, gráficos de linhas e uma miríade de outros gráficos."
+  },
+  {
+    "objectID": "gabriel_curso_r.html#como-instalar-pacotes-1",
+    "href": "gabriel_curso_r.html#como-instalar-pacotes-1",
+    "title": "Curso R",
+    "section": "Como instalar pacotes",
+    "text": "Como instalar pacotes\nExiste uma função principal para instalação de pacotes: install.packages. Você pode verificar sua documentação digitando ?install.packages1 no seu console do R. Dessa forma, podemos instalar o pacote ggplot2 da seguinte forma:\n\ninstall.packages(\"ggplot2\")\n\nAgora que o pacote foi instalado, você pode utilizar suas funções chamando ele com a função library. A função library carrega todos as funções implementadas num pacote. Assim, temos:\n\nlibrary(ggplot2)\n\nObs: Utilizar ? antes do nome de uma função no R é uma forma de olhar a documentação de uma função e obter informações sobre sua funcionalidade. Caso você queira pesquisar afundo no sistema de ajuda do R, você pode utilizar ?? antes do nome de uma função e irá procurar em diferentes pacotes funções com aquele mesmo nome. A função help é o mesmo que utilizar ?."
+  },
+  {
+    "objectID": "gabriel_curso_r.html#operações-matemáticas-básicas-1",
+    "href": "gabriel_curso_r.html#operações-matemáticas-básicas-1",
+    "title": "Curso R",
+    "section": "Operações matemáticas básicas",
+    "text": "Operações matemáticas básicas\n\n\n\n\n\nOperação\nNome\nExemplo\n\n\n\n\n+\nAdição\nx + y\n\n\n-\nSubtração\nx - y\n\n\n*\nMultiplicação\nx * y\n\n\n/\nDivisão\nx / y\n\n\n^\nExpoente\nx ^ y\n\n\n%%\nResto da divisão (Módulo)\nx %% y\n\n\n%/%\nDivisão inteira\nx %/% y"
+  }
+]

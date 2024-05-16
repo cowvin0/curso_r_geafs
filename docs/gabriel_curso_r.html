@@ -1231,6 +1231,7 @@ margin-right: 0; }
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Curso R</h1>
+  <p class="subtitle">GEAFS - Grupo de Estudos de Ambientes Fluviais Semiáridos</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -1241,14 +1242,23 @@ Gabriel de Jesus Pereira
 </div>
 
 </section>
-<section id="o-que-são-pacotes" class="title-slide slide level1 smaller center">
+<section>
+<section id="o-que-são-pacotes" class="title-slide slide level1 center">
 <h1>O que são pacotes</h1>
+
+</section>
+<section id="o-que-são-pacotes-1" class="slide level2 smaller">
+<h2>O que são pacotes</h2>
 <p>A linguagem base do R vem com inúmeras funções implementadas para operações numéricas, análise estatística, gráficos para visualização e muitos outros. Essas funções da própria linguagem são conhecidas como <strong>built-in</strong>. No entanto, é possível utilizar funcionalidades implementadas por outros usuários da linguagem. Para isso, podemos instalar pacotes.</p>
 <p>Os pacotes em R e muitas outras linguagens são um conjunto de funcionalidades implementadas por usuários da própria linguagem. Por exemplo, um dos pacotes mais conhecidos para visualização de gráficos é o <strong>ggplot2</strong>, que foi implementada por Hadley Wickham. Este pacote implementa uma série de funções para visualização estatística, permitindo criar Box-plots, gráficos de dispersão, gráficos de linhas e uma miríade de outros gráficos.</p>
-</section>
-
-<section id="como-instalar-pacotes" class="title-slide slide level1 smaller center scrollable">
+</section></section>
+<section>
+<section id="como-instalar-pacotes" class="title-slide slide level1 center">
 <h1>Como instalar pacotes</h1>
+
+</section>
+<section id="como-instalar-pacotes-1" class="slide level2 smaller scrollable">
+<h2>Como instalar pacotes</h2>
 <p>Existe uma função principal para instalação de pacotes: <em>install.packages</em>. Você pode verificar sua documentação digitando <em>?install.packages</em><sup>1</sup> no seu console do R. Dessa forma, podemos instalar o pacote <em>ggplot2</em> da seguinte forma:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">install.packages</span>(<span class="st">&quot;ggplot2&quot;</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1257,8 +1267,65 @@ Gabriel de Jesus Pereira
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">library</span>(ggplot2)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<aside><ol class="aside-footnotes"><li id="fn1"><p>Obs: Utilizar <em>?</em> antes do nome de uma função no R é uma forma de olhar a documentação de uma função e obter informações sobre sua funcionalidade. Caso você queira pesquisar afundo no <em>sistema de ajuda</em> do R, você pode utilizar <em>??</em> antes do nome de uma função e irá procurar em diferentes pacotes funções com aquele mesmo nome. A função <em>help</em> é o mesmo que utilizar <em>?</em>.</p></li></ol></aside></section>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>Obs: Utilizar <em>?</em> antes do nome de uma função no R é uma forma de olhar a documentação de uma função e obter informações sobre sua funcionalidade. Caso você queira pesquisar afundo no <em>sistema de ajuda</em> do R, você pode utilizar <em>??</em> antes do nome de uma função e irá procurar em diferentes pacotes funções com aquele mesmo nome. A função <em>help</em> é o mesmo que utilizar <em>?</em>.</p></li></ol></aside></section></section>
+<section>
+<section id="operações-matemáticas-básicas" class="title-slide slide level1 center">
+<h1>Operações matemáticas básicas</h1>
 
+</section>
+<section id="operações-matemáticas-básicas-1" class="slide level2 smaller">
+<h2>Operações matemáticas básicas</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Operação</th>
+<th style="text-align: left;">Nome</th>
+<th style="text-align: left;">Exemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">+</td>
+<td style="text-align: left;">Adição</td>
+<td style="text-align: left;">x + y</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">-</td>
+<td style="text-align: left;">Subtração</td>
+<td style="text-align: left;">x - y</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">*</td>
+<td style="text-align: left;">Multiplicação</td>
+<td style="text-align: left;">x * y</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">/</td>
+<td style="text-align: left;">Divisão</td>
+<td style="text-align: left;">x / y</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">^</td>
+<td style="text-align: left;">Expoente</td>
+<td style="text-align: left;">x ^ y</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">%%</td>
+<td style="text-align: left;">Resto da divisão (Módulo)</td>
+<td style="text-align: left;">x %% y</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">%/%</td>
+<td style="text-align: left;">Divisão inteira</td>
+<td style="text-align: left;">x %/% y</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section></section>
 <section id="estrutura-de-dados-em-r" class="title-slide slide level1 center">
 <h1>Estrutura de dados em R</h1>
 

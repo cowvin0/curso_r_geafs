@@ -1,12 +1,12 @@
 ---
 title: Curso R
 author: Gabriel de Jesus Pereira
+subtitle: GEAFS - Grupo de Estudos de Ambientes Fluviais Semiáridos
 Date: today
 execute:
   refresh: true
   warning: false
   error: false
-  eval: true
   echo: true
 revealjs-plugins:
   - attribution
@@ -27,13 +27,21 @@ lang: pt-br
 eval: false
 ---
 
-# O que são pacotes {.smaller}
+```{r echo=FALSE, eval=TRUE}
+library(tidyverse)
+```
+
+# O que são pacotes
+
+## O que são pacotes {.smaller}
 
 A linguagem base do R vem com inúmeras funções implementadas para operações numéricas, análise estatística, gráficos para visualização e muitos outros. Essas funções da própria linguagem são conhecidas como **built-in**. No entanto, é possível utilizar funcionalidades implementadas por outros usuários da linguagem. Para isso, podemos instalar pacotes.
 
 Os pacotes em R e muitas outras linguagens são um conjunto de funcionalidades implementadas por usuários da própria linguagem. Por exemplo, um dos pacotes mais conhecidos para visualização de gráficos é o **ggplot2**, que foi implementada por Hadley Wickham. Este pacote implementa uma série de funções para visualização estatística, permitindo criar Box-plots, gráficos de dispersão, gráficos de linhas e uma miríade de outros gráficos.
 
-# Como instalar pacotes {.smaller}
+# Como instalar pacotes
+
+## Como instalar pacotes {.smaller}
 
 Existe uma função principal para instalação de pacotes: *install.packages*. Você pode verificar sua documentação digitando *?install.packages*^[Obs: Utilizar *?* antes do nome de uma função no R é uma forma de olhar a documentação de uma função e obter informações sobre sua funcionalidade. Caso você queira pesquisar afundo no *sistema de ajuda* do R, você pode utilizar *??* antes do nome de uma função e irá procurar em diferentes pacotes funções com aquele mesmo nome. A função *help* é o mesmo que utilizar *?*.] no seu console do R. Dessa forma, podemos instalar o pacote *ggplot2* da seguinte forma:
 
@@ -48,5 +56,24 @@ todos as funções implementadas num pacote. Assim, temos:
 library(ggplot2)
 ```
 
+# Operações matemáticas básicas
+
+## Operações matemáticas básicas {.smaller}
+
+```{r echo=FALSE, eval=TRUE}
+df1 <- tibble(
+  Operação = c("+", "-", "*",
+               "/", "^", "%%",
+               "%/%"),
+  Nome = c("Adição", "Subtração", "Multiplicação",
+           "Divisão", "Expoente", "Resto da divisão (Módulo)",
+           "Divisão inteira"),
+  Exemplo = c("x + y", "x - y", "x * y",
+              "x / y", "x ^ y", "x %% y",
+              "x %/% y")
+)
+df1 |>
+  knitr::kable()
+```
 
 # Estrutura de dados em R
