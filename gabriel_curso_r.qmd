@@ -76,4 +76,6 @@ df1 |>
   knitr::kable()
 ```
 
+#
+
 # Estrutura de dados em R
