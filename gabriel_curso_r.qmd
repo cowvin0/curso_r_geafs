@@ -60,22 +60,24 @@ library(ggplot2)
 
 ## Operações matemáticas básicas {.smaller}
 
-```{r echo=FALSE, eval=TRUE}
-df1 <- tibble(
-  Operação = c("+", "-", "*",
-               "/", "^", "%%",
-               "%/%"),
-  Nome = c("Adição", "Subtração", "Multiplicação",
-           "Divisão", "Expoente", "Resto da divisão (Módulo)",
-           "Divisão inteira"),
-  Exemplo = c("x + y", "x - y", "x * y",
-              "x / y", "x ^ y", "x %% y",
-              "x %/% y")
-)
-df1 |>
-  knitr::kable()
-```
+falar do *log* e *exp*
 
-#
+## Operações matemáticas básicas {.smaller}
+
+| Operação |           Nome            |  Exemplo  |
+| :------: | :-----------------------: | :-------: |
+|    +     |          Adição           |  `x + y`  |
+|    -     |         Subtração         |  `x - y`  |
+|    *     |       Multiplicação       |  `x * y`  |
+|    /     |          Divisão          |  `x / y`  |
+|    ^     |         Expoente          |  `x ^ y`  |
+|    %%    | Resto da divisão (Módulo) | `x %% y`  |
+|   %/%    |      Divisão inteira      | `x %/% y` |
+
+## Operações matemáticas básicas {.smaller}
+
+falar de exemplos
+
+##
 
 # Estrutura de dados em R
