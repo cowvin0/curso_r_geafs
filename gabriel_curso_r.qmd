@@ -1,5 +1,5 @@
 ---
-title: Curso R
+title: Introdução à linguagem de programação R
 author: Gabriel de Jesus Pereira
 subtitle: GEAFS - Grupo de Estudos de Ambientes Fluviais Semiáridos
 Date: today
@@ -60,9 +60,22 @@ library(ggplot2)
 
 ## Operações matemáticas básicas {.smaller}
 
-falar do *log* e *exp*
+A linguagem de programação R tem implementado 7 operações matemáticas básicas implementadas na linguagem, além de suportar uma grande quantidade de funções matemáticas que permitem realizar operações mais complexas. Por exemplo, caso queira calcular o $\ln\left(10\right)$, podemos utilizar a função $\log\left(\right)$. Veja um exemplo:
+
+```{r eval=TRUE, echo=TRUE}
+log(10)
+```
+
+Com a função $\exp\left(\right)$ é possível calcular a função exponencial $\left(e^x\right)$. Assim, calculando $e^2$:
+
+```{r eval=TRUE}
+exp(2)
+```
+
 
 ## Operações matemáticas básicas {.smaller}
+
+: Resumo das operações matemáticas
 
 | Operação |           Nome            |  Exemplo  |
 | :------: | :-----------------------: | :-------: |
@@ -74,10 +87,27 @@ falar do *log* e *exp*
 |    %%    | Resto da divisão (Módulo) | `x %% y`  |
 |   %/%    |      Divisão inteira      | `x %/% y` |
 
-## Operações matemáticas básicas {.smaller}
 
-falar de exemplos
+## Assinando objetos {.smaller}
 
-##
+Caso você queira guardar valores ou diferentes itens na linguagem R, você pode utilizar o sinal de `=` ou `<-`. Assim, essa é podemos atribuir valores para dois objetos, `y` e `x`:
+
+```{r eval=TRUE}
+x <- 3
+y <- 5
+```
+
+Assim, o objeto $x$ e $y$ tem os valores 3 e 5 atribuído a eles, respectivamente. Agora é possível fazer cálculos matemáticos:
+
+```{r eval=TRUE}
+x + y
+```
+
+É possível utilizar os outros dois objetos para criar outro a partir deles:
+
+```{r eval=TRUE}
+z <- x / y
+z
+```
 
 # Estrutura de dados em R
