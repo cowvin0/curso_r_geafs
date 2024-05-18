@@ -111,3 +111,17 @@ z
 ```
 
 # Estrutura de dados em R
+
+falar sobre as estruturas de dados de R, falar quais são homogêneas e heterogêneas
+
+# Estrutura de dados em R
+
+Fazer uma tabela das estruturas de dados que são ou não homogêneas
+
+# Vetor
+
+# Matrizes
+
+# Dataframes
+
+# Fatores
