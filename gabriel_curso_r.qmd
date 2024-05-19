@@ -110,15 +110,28 @@ z <- x / y
 z
 ```
 
+# Estrutura de dados em R {.smaller}
+
+Uma estrutura de dados é uma forma particular de se organizar dados em um computador para que possam ser utilizados de forma efetiva. Dessa forma, no R existem 5 estruturas de dados diferentes: vetores, dataframes, matrizes, arrays e factors. No entanto, existem dois tipos vetores distintos, listas e vetores atômicos. A lista é uma estrutura de dados heterogênea e o vetor atômico deve ser homogêneo. Uma estrutura de dados heterogênea suporta elementos com qualquer estrutura de dados. Assim, uma lista pode conter elementos do tipo vetor atômico, dataframe, matriz, array ou fator. Por outro lado, uma estrutura de dados homogênea suporta apenas elementos do mesmo tipo. Logo, um vetor atômico com um elemento do tipo matriz só pode conter elementos do tipo matriz.
+
 # Estrutura de dados em R
 
-falar sobre as estruturas de dados de R, falar quais são homogêneas e heterogêneas
+: Resumo das estruturas de dados
 
-# Estrutura de dados em R
+| Estrutura de Dados | Homogeneo |
+|:------------------:|:---------:|
+|    Vetor Atomico   |    Sim    |
+|        Lista       |    Nao    |
+|       Matriz       |    Sim    |
+|        Array       |    Sim    |
+|      Dataframe     |    Nao    |
+|       Fatores      |    Nao    |
 
-Fazer uma tabela das estruturas de dados que são ou não homogêneas
+# Vetores
 
-# Vetor
+## Vetores Atômicos
+
+## Listas
 
 # Matrizes
 

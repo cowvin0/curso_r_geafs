@@ -33,5 +33,19 @@
     "title": "Introdução à linguagem de programação R",
     "section": "Assinando objetos",
     "text": "Assinando objetos\nCaso você queira guardar valores ou diferentes itens na linguagem R, você pode utilizar o sinal de = ou &lt;-. Assim, essa é podemos atribuir valores para dois objetos, y e x:\n\nx &lt;- 3\ny &lt;- 5\n\nAssim, o objeto \\(x\\) e \\(y\\) tem os valores 3 e 5 atribuído a eles, respectivamente. Agora é possível fazer cálculos matemáticos:\n\nx + y\n\n[1] 8\n\n\nÉ possível utilizar os outros dois objetos para criar outro a partir deles:\n\nz &lt;- x / y\nz\n\n[1] 0.6"
+  },
+  {
+    "objectID": "gabriel_curso_r.html#vetores-atômicos",
+    "href": "gabriel_curso_r.html#vetores-atômicos",
+    "title": "Introdução à linguagem de programação R",
+    "section": "Vetores Atômicos",
+    "text": "Vetores Atômicos"
+  },
+  {
+    "objectID": "gabriel_curso_r.html#listas",
+    "href": "gabriel_curso_r.html#listas",
+    "title": "Introdução à linguagem de programação R",
+    "section": "Listas",
+    "text": "Listas"
   }
 ]
