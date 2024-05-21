@@ -118,22 +118,45 @@ Uma estrutura de dados é uma forma particular de se organizar dados em um compu
 
 : Resumo das estruturas de dados
 
-| Estrutura de Dados | Homogeneo |
+| Estrutura de Dados | Homogêneo |
 |:------------------:|:---------:|
-|    Vetor Atomico   |    Sim    |
-|        Lista       |    Nao    |
+|    Vetor Atômico   |    Sim    |
+|        Lista       |    Não    |
 |       Matriz       |    Sim    |
 |        Array       |    Sim    |
-|      Dataframe     |    Nao    |
-|       Fatores      |    Nao    |
+|      Dataframe     |    Não    |
+|       Fatores      |    Não    |
 
 # Vetores
 
 ## Vetores Atômicos
 
+Vetores atômicos é uma das estruturas mais amplamente utilizadas no R. Vetor atômico é uma sequência de elementos do mesmo tipo (`homogêneo`), como números, caracteres, valores lógicos ou outro tipo de elemento. Além disso, os vetores atômicos permitem operações elemento a elemento, o que torna o código mais conciso e mais fácil de ler.
+
+## Como criar um vetor atômico {.smaller}
+
+Os vetores atômicos podem ser criados utilizando a função `c()`. Por exemplo, você pode criar um objeto chamado meu vetor que tem como atributo um vetor atômico:
+
+```{r eval=TRUE}
+meu_vetor <- c(1, 3, 1, 42)
+meu_vetor
+```
+
+Vetores atômico podem ser cálculos ou diferentes valores atribuídos a objetos, incluindo vetores atômicos:
+
+```{r eval=TRUE}
+valorqualquer <- c(32.1, 5)
+meu_vetor2 <- c(3, -3, 2, 3.45, 1e+03, 64^0.5, 2+(3-1.1)/9.44, valorqualquer)
+meu_vetor2
+```
+
 ## Listas
 
 # Matrizes
+
+# Array
+
+Falar rapidamente sobre arrays
 
 # Dataframes
 

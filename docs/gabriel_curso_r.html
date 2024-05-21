@@ -1375,17 +1375,17 @@ Gabriel de Jesus Pereira
 <thead>
 <tr class="header">
 <th style="text-align: center;">Estrutura de Dados</th>
-<th style="text-align: center;">Homogeneo</th>
+<th style="text-align: center;">Homogêneo</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">Vetor Atomico</td>
+<td style="text-align: center;">Vetor Atômico</td>
 <td style="text-align: center;">Sim</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Lista</td>
-<td style="text-align: center;">Nao</td>
+<td style="text-align: center;">Não</td>
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Matriz</td>
@@ -1397,11 +1397,11 @@ Gabriel de Jesus Pereira
 </tr>
 <tr class="odd">
 <td style="text-align: center;">Dataframe</td>
-<td style="text-align: center;">Nao</td>
+<td style="text-align: center;">Não</td>
 </tr>
 <tr class="even">
 <td style="text-align: center;">Fatores</td>
-<td style="text-align: center;">Nao</td>
+<td style="text-align: center;">Não</td>
 </tr>
 </tbody>
 </table>
@@ -1414,6 +1414,28 @@ Gabriel de Jesus Pereira
 </section>
 <section id="vetores-atômicos" class="slide level2">
 <h2>Vetores Atômicos</h2>
+<p>Vetores atômicos é uma das estruturas mais amplamente utilizadas no R. Vetor atômico é uma sequência de elementos do mesmo tipo (<code>homogêneo</code>), como números, caracteres, valores lógicos ou outro tipo de elemento. Além disso, os vetores atômicos permitem operações elemento a elemento, o que torna o código mais conciso e mais fácil de ler.</p>
+</section>
+<section id="como-criar-um-vetor-atômico" class="slide level2 smaller">
+<h2>Como criar um vetor atômico</h2>
+<p>Os vetores atômicos podem ser criados utilizando a função <code>c()</code>. Por exemplo, você pode criar um objeto chamado meu vetor que tem como atributo um vetor atômico:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>meu_vetor <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">42</span>)</span>
+<span id="cb12-2"><a></a>meu_vetor</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  1  3  1 42</code></pre>
+</div>
+</div>
+<p>Vetores atômico podem ser cálculos ou diferentes valores atribuídos a objetos, incluindo vetores atômicos:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>valorqualquer <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">32.1</span>, <span class="dv">5</span>)</span>
+<span id="cb14-2"><a></a>meu_vetor2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="sc">-</span><span class="dv">3</span>, <span class="dv">2</span>, <span class="fl">3.45</span>, <span class="fl">1e+03</span>, <span class="dv">64</span><span class="sc">^</span><span class="fl">0.5</span>, <span class="dv">2</span><span class="sc">+</span>(<span class="dv">3</span><span class="fl">-1.1</span>)<span class="sc">/</span><span class="fl">9.44</span>, valorqualquer)</span>
+<span id="cb14-3"><a></a>meu_vetor2</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]    3.000000   -3.000000    2.000000    3.450000 1000.000000    8.000000
+[7]    2.201271   32.100000    5.000000</code></pre>
+</div>
+</div>
 </section>
 <section id="listas" class="slide level2">
 <h2>Listas</h2>
@@ -1421,6 +1443,11 @@ Gabriel de Jesus Pereira
 <section id="matrizes" class="title-slide slide level1 center">
 <h1>Matrizes</h1>
 
+</section>
+
+<section id="array" class="title-slide slide level1 center">
+<h1>Array</h1>
+<p>Falar rapidamente sobre arrays</p>
 </section>
 
 <section id="dataframes" class="title-slide slide level1 center">

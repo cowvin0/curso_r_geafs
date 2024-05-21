@@ -39,7 +39,14 @@
     "href": "gabriel_curso_r.html#vetores-atômicos",
     "title": "Introdução à linguagem de programação R",
     "section": "Vetores Atômicos",
-    "text": "Vetores Atômicos"
+    "text": "Vetores Atômicos\nVetores atômicos é uma das estruturas mais amplamente utilizadas no R. Vetor atômico é uma sequência de elementos do mesmo tipo (homogêneo), como números, caracteres, valores lógicos ou outro tipo de elemento. Além disso, os vetores atômicos permitem operações elemento a elemento, o que torna o código mais conciso e mais fácil de ler."
+  },
+  {
+    "objectID": "gabriel_curso_r.html#como-criar-um-vetor-atômico",
+    "href": "gabriel_curso_r.html#como-criar-um-vetor-atômico",
+    "title": "Introdução à linguagem de programação R",
+    "section": "Como criar um vetor atômico",
+    "text": "Como criar um vetor atômico\nOs vetores atômicos podem ser criados utilizando a função c(). Por exemplo, você pode criar um objeto chamado meu vetor que tem como atributo um vetor atômico:\n\nmeu_vetor &lt;- c(1, 3, 1, 42)\nmeu_vetor\n\n[1]  1  3  1 42\n\n\nVetores atômico podem ser cálculos ou diferentes valores atribuídos a objetos, incluindo vetores atômicos:\n\nvalorqualquer &lt;- c(32.1, 5)\nmeu_vetor2 &lt;- c(3, -3, 2, 3.45, 1e+03, 64^0.5, 2+(3-1.1)/9.44, valorqualquer)\nmeu_vetor2\n\n[1]    3.000000   -3.000000    2.000000    3.450000 1000.000000    8.000000\n[7]    2.201271   32.100000    5.000000"
   },
   {
     "objectID": "gabriel_curso_r.html#listas",
