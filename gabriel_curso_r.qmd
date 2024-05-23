@@ -145,19 +145,71 @@ meu_vetor
 Vetores atômico podem ser cálculos ou diferentes valores atribuídos a objetos, incluindo vetores atômicos:
 
 ```{r eval=TRUE}
-valorqualquer <- c(32.1, 5)
+valorqualquer <- 5
 meu_vetor2 <- c(3, -3, 2, 3.45, 1e+03, 64^0.5, 2+(3-1.1)/9.44, valorqualquer)
 meu_vetor2
 ```
 
+Você pode também juntar vetores:
+
+```{r}
+vetores_juntos <- c(meu_vetor, meu_vetor2)
+```
+
+## Extraindo valores de um vetor atômico {.smaller}
+
+Você pode ter notado valores entre colchetes na saída do código que aparecem dessa forma [i], em que i é um número inteiro. Essa notação indica a posição dos elementos de um vetor atômico. Assim, considerando o vetor `meu_vetor2`, podemos selecionar o segundo elemento da seguinte forma:
+
+```{r eval=TRUE}
+meu_vetor2[2]
+```
+
+Caso não saibamos a quantidade de elementos num vetor e queira obter a quantidade total de elementos num vetor atômico, podemos utilizar a função `length()`:
+
+```{r eval=TRUE}
+length(meu_vetor2)
+```
+
+## Extraindo valores de um vetor atômico {.smaller}
+
+Dessa forma, podemos selecionar o último elemento do vetor `meu_vetor2` utilizando a função `length`:
+
+```{r eval=TRUE}
+meu_vetor2[length(meu_vetor2)]
+```
+
+É possível também selecionar todos os elementos de um vetor atômico, exceto um. Veja um exemplo selecionando todos os valores do vetor `meu_vetor2`, exceto o último:
+
+```{r eval=TRUE}
+meu_vetor2[-length(meu_vetor2)]
+```
+
+## Extraindo valores de um vetor atômico {.smaller}
+
+É possível também selecionar mais de um elemento utilizando sequências que pode ser criado com `:`. Podemos criar uma sequência de 2 a 5:
+
+```{r, eval=TRUE}
+2:5
+```
+
+Assim selecionando os valores de 2 a 5 do vetor `meu_vetor2`:
+
+```{r eval=TRUE}
+meu_vetor2[2:5]
+```
+
+Os vetores atômicos também podem ser utilizados para selecionar elementos. Selecionando o quarto e sexto elemento:
+
+```{r eval=TRUE}
+meu_vetor2[c(4, 6)]
+```
+
+Removendo o quarto e sexto elemento:
+
+```{r eval=TRUE}
+meu_vetor2[-c(4, 6)]
+```
+
 ## Listas
 
-# Matrizes
-
-# Array
-
-Falar rapidamente sobre arrays
-
-# Dataframes
-
-# Fatores
+## Dataframes
