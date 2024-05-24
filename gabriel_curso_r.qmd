@@ -14,6 +14,7 @@ revealjs-plugins:
   - pointer
 format:
   revealjs:
+    code-copy: true
     theme: [default, style.scss]
     embed-resources: true
     transition: slide
