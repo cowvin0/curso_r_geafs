@@ -152,7 +152,7 @@ meu_vetor2
 
 Você pode também juntar vetores:
 
-```{r}
+```{r eval=TRUE}
 vetores_juntos <- c(meu_vetor, meu_vetor2)
 ```
 
