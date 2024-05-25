@@ -70,6 +70,13 @@
     "text": "Extraindo valores de um vetor atômico\nÉ possível também selecionar mais de um elemento utilizando sequências que pode ser criado com :. Podemos criar uma sequência de 2 a 5:\n\n2:5\n\n[1] 2 3 4 5\n\n\nAssim selecionando os valores de 2 a 5 do vetor meu_vetor2:\n\nmeu_vetor2[2:5]\n\n[1]   -3.00    2.00    3.45 1000.00\n\n\nOs vetores atômicos também podem ser utilizados para selecionar elementos. Selecionando o quarto e sexto elemento:\n\nmeu_vetor2[c(4, 6)]\n\n[1] 3.45 8.00\n\n\nRemovendo o quarto e sexto elemento:\n\nmeu_vetor2[-c(4, 6)]\n\n[1]    3.000000   -3.000000    2.000000 1000.000000    2.201271    5.000000"
   },
   {
+    "objectID": "gabriel_curso_r.html#substituindo-elementos-de-vetores-atômicos",
+    "href": "gabriel_curso_r.html#substituindo-elementos-de-vetores-atômicos",
+    "title": "Introdução à linguagem de programação R",
+    "section": "Substituindo elementos de vetores atômicos",
+    "text": "Substituindo elementos de vetores atômicos\nÉ possível também substituir os elementos de um vetor atômico utilizando a sua posição. Veja um exemplo:\n\n# reescrevendo o segundo elemento de `meu_vetor2` por um caracter\n\nmeu_vetor2[2]  &lt;- \"Gabriel\"\nmeu_vetor2\n\n[1] \"3\"                \"Gabriel\"          \"2\"                \"3.45\"            \n[5] \"1000\"             \"8\"                \"2.20127118644068\" \"5\"               \n\n\nPerceba que agora que todos os elementos do vetor convergem para caracter. É possível perceber isso pelas \".\nSubstituindo do segundo ao quarto valor:\n\nmeu_vetor2[2:4] &lt;- c(\"Pedro\", \"Ataline\")\nmeu_vetor2\n\n[1] \"3\"                \"Pedro\"            \"Ataline\"          \"Pedro\"           \n[5] \"1000\"             \"8\"                \"2.20127118644068\" \"5\""
+  },
+  {
     "objectID": "gabriel_curso_r.html#listas",
     "href": "gabriel_curso_r.html#listas",
     "title": "Introdução à linguagem de programação R",
@@ -82,5 +89,12 @@
     "title": "Introdução à linguagem de programação R",
     "section": "Dataframes",
     "text": "Dataframes"
+  },
+  {
+    "objectID": "gabriel_curso_r.html#o-que-é-o-tidyverse",
+    "href": "gabriel_curso_r.html#o-que-é-o-tidyverse",
+    "title": "Introdução à linguagem de programação R",
+    "section": "O que é o Tidyverse",
+    "text": "O que é o Tidyverse\nO tidyverse é uma coleção de pacotes que facilita os processos básicos de um projeto ou análise de ciência de dados. Além disso, os pacotes que o compõe possuem uma sintaxe comum, o que torna a aplicação de métodos de análise de dados mais consistente e intuitiva. O tidyverse inclui pacotes para visualização, limpeza de dados, manipulação de datas, importação de dados e manipulação de strings."
   }
 ]

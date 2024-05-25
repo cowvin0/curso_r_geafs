@@ -15,6 +15,7 @@ revealjs-plugins:
 format:
   revealjs:
     code-copy: true
+    # logo: includes/logogea.png
     theme: [default, style.scss]
     embed-resources: true
     transition: slide
@@ -211,6 +212,32 @@ Removendo o quarto e sexto elemento:
 meu_vetor2[-c(4, 6)]
 ```
 
+## Substituindo elementos de vetores atômicos {.smaller}
+
+É possível também substituir os elementos de um vetor atômico utilizando a sua posição. Veja um exemplo:
+
+```{r eval=TRUE}
+# reescrevendo o segundo elemento de `meu_vetor2` por um caracter
+
+meu_vetor2[2]  <- "Gabriel"
+meu_vetor2
+```
+
+Perceba que agora que todos os elementos do vetor convergem para caracter. É possível perceber isso pelas `"`.
+
+Substituindo do segundo ao quarto valor:
+
+```{r eval=TRUE}
+meu_vetor2[2:4] <- c("Pedro", "Ataline")
+meu_vetor2
+```
+
 ## Listas
 
 ## Dataframes
+
+# Tidyverse
+
+## O que é o Tidyverse
+
+O tidyverse é uma coleção de pacotes que facilita os processos básicos de um projeto ou análise de ciência de dados. Além disso, os pacotes que o compõe possuem uma sintaxe comum, o que torna a aplicação de métodos de análise de dados mais consistente e intuitiva. O tidyverse inclui pacotes para visualização, limpeza de dados, manipulação de datas, importação de dados e manipulação de strings.
