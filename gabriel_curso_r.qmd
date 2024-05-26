@@ -249,3 +249,11 @@ O pacote do tidyverse que serve para importação de banco de dados, é o `readr
 df <- read_csv("vazao.csv")
 head(df)
 ```
+
+## Lidando com datas
+
+
+```{r}
+df |> .
+  mutate()
+```
