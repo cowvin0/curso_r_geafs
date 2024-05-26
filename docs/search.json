@@ -96,5 +96,12 @@
     "title": "Introdução à linguagem de programação R",
     "section": "O que é o Tidyverse",
     "text": "O que é o Tidyverse\nO tidyverse é uma coleção de pacotes que facilita os processos básicos de um projeto ou análise de ciência de dados. Além disso, os pacotes que o compõe possuem uma sintaxe comum, o que torna a aplicação de métodos de análise de dados mais consistente e intuitiva. O tidyverse inclui pacotes para visualização, limpeza de dados, manipulação de datas, importação de dados e manipulação de strings."
+  },
+  {
+    "objectID": "gabriel_curso_r.html#como-importar-um-banco-de-dados",
+    "href": "gabriel_curso_r.html#como-importar-um-banco-de-dados",
+    "title": "Introdução à linguagem de programação R",
+    "section": "Como importar um banco de dados",
+    "text": "Como importar um banco de dados\nO pacote do tidyverse que serve para importação de banco de dados, é o readr. Por exemplo, podemos utilizar a função read_csv para ler um arquivo .csv. Veja um exemplo com dados de Vazão:\n\ndf &lt;- read_csv(\"vazao.csv\")\nhead(df)\n\n# A tibble: 6 × 39\n  EstacaoCodigo Data  Maxima Minima Media DiaMaxima DiaMinima MediaAnual Vazao01\n          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;     &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;  \n1      38830000 01/0… &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;         NA        NA &lt;NA&gt;       &lt;NA&gt;   \n2      38830000 01/0… &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;         NA        NA &lt;NA&gt;       &lt;NA&gt;   \n3      38830000 01/0… 2,8911 0,2548 1011         29         7 &lt;NA&gt;       0,7803 \n4      38830000 01/0… 44,63… 0,7803 3078         12         5 &lt;NA&gt;       1502   \n5      38830000 01/0… 16,03… 0,2548 2,33…        18         1 &lt;NA&gt;       0,2548 \n6      38830000 01/0… 3,4274 0,2548 1,21…         1        26 &lt;NA&gt;       3,4274 \n# ℹ 30 more variables: Vazao02 &lt;chr&gt;, Vazao03 &lt;chr&gt;, Vazao04 &lt;chr&gt;,\n#   Vazao05 &lt;chr&gt;, Vazao06 &lt;chr&gt;, Vazao07 &lt;chr&gt;, Vazao08 &lt;chr&gt;, Vazao09 &lt;chr&gt;,\n#   Vazao10 &lt;chr&gt;, Vazao11 &lt;chr&gt;, Vazao12 &lt;chr&gt;, Vazao13 &lt;chr&gt;, Vazao14 &lt;chr&gt;,\n#   Vazao15 &lt;chr&gt;, Vazao16 &lt;chr&gt;, Vazao17 &lt;chr&gt;, Vazao18 &lt;chr&gt;, Vazao19 &lt;chr&gt;,\n#   Vazao20 &lt;chr&gt;, Vazao21 &lt;chr&gt;, Vazao22 &lt;chr&gt;, Vazao23 &lt;chr&gt;, Vazao24 &lt;chr&gt;,\n#   Vazao25 &lt;chr&gt;, Vazao26 &lt;chr&gt;, Vazao27 &lt;chr&gt;, Vazao28 &lt;chr&gt;, Vazao29 &lt;chr&gt;,\n#   Vazao30 &lt;chr&gt;, Vazao31 &lt;chr&gt;"
   }
 ]

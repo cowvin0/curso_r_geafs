@@ -15,7 +15,6 @@ revealjs-plugins:
 format:
   revealjs:
     code-copy: true
-    # logo: includes/logogea.png
     theme: [default, style.scss]
     embed-resources: true
     transition: slide
@@ -241,3 +240,12 @@ meu_vetor2
 ## O que é o Tidyverse
 
 O tidyverse é uma coleção de pacotes que facilita os processos básicos de um projeto ou análise de ciência de dados. Além disso, os pacotes que o compõe possuem uma sintaxe comum, o que torna a aplicação de métodos de análise de dados mais consistente e intuitiva. O tidyverse inclui pacotes para visualização, limpeza de dados, manipulação de datas, importação de dados e manipulação de strings.
+
+## Como importar um banco de dados {.smaller}
+
+O pacote do tidyverse que serve para importação de banco de dados, é o `readr`. Por exemplo, podemos utilizar a função `read_csv` para ler um arquivo `.csv`. Veja um exemplo com dados de Vazão:
+
+```{r eval=TRUE}
+df <- read_csv("vazao.csv")
+head(df)
+```
