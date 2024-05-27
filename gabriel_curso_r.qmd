@@ -252,8 +252,18 @@ head(df)
 
 ## Lidando com datas
 
+```{r eval=TRUE}
+df <- df |>
+  mutate(
+    Data = as.Date(Data, format = "%d/%m/%Y"),
+    Ano = year(Data),
+    Mês = month(Data),
+    Dia = day(Data)
+    )
+```
+
+## Calculando os acumulados
 
 ```{r}
-df |> .
-  mutate()
+
 ```
