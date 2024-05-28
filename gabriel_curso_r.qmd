@@ -28,9 +28,6 @@ lang: pt-br
 eval: false
 ---
 
-```{r echo=FALSE, eval=TRUE}
-library(tidyverse)
-```
 
 # O que são pacotes
 
@@ -227,7 +224,7 @@ Perceba que agora que todos os elementos do vetor convergem para caracter. É po
 Substituindo do segundo ao quarto valor:
 
 ```{r eval=TRUE}
-meu_vetor2[2:4] <- c("Pedro", "Ataline")
+meu_vetor2[2:4] <- c("Paulo", "Ataline", "Gabriel")
 meu_vetor2
 ```
 
@@ -243,10 +240,15 @@ O tidyverse é uma coleção de pacotes que facilita os processos básicos de um
 
 ## Como importar um banco de dados {.smaller}
 
-O pacote do tidyverse que serve para importação de banco de dados, é o `readr`. Por exemplo, podemos utilizar a função `read_csv` para ler um arquivo `.csv`. Veja um exemplo com dados de Vazão:
+O pacote do tidyverse que serve para importação de banco de dados, é o `readr`. Por exemplo, podemos utilizar a função `read_csv` para ler um arquivo `.csv`. Veja um exemplo com dados de Chuva:
+
+```{r echo=TRUE}
+library(dplyr)
+library(readr)
+```
 
 ```{r eval=TRUE}
-df <- read_csv("vazao.csv")
+df <- read_csv("chuva.csv")
 head(df)
 ```
 
@@ -259,7 +261,8 @@ df <- df |>
     Ano = year(Data),
     Mês = month(Data),
     Dia = day(Data)
-    )
+    ) |>
+    drop_na(Data)
 head(df)
 ```
 
@@ -271,11 +274,11 @@ df  <- df |>
 
 df <- df |>
   pivot_longer(
-    cols = starts_with("Vazao"),
+    cols = starts_with("Chuva"),
     names_to = "Dia",
-    values_to = "Vazão"
+    values_to = "Chuva"
   ) |>
-  mutate(Dia = as.double(str_replace(Dia, "Vazao", ""))) |>
+  mutate(Dia = as.double(str_replace(Dia, "Chuva", ""))) |>
   arrange(Data, Dia)
 
 head(df)
@@ -283,8 +286,9 @@ head(df)
 
 
 ```{r eval=TRUE}
-df |>
-  group_by(Ano) |>
-  mutate(Acumulado = cumsum(Vazão)) |>
-  ungroup()
+final  <- as.Date("2019-01-01")
+
+df <- df |>
+  filter(between(Data, final - days(360), final)) |>
+  mutate(Acumulado = cumsum(Chuva))
 ```
