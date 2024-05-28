@@ -1553,21 +1553,21 @@ Gabriel de Jesus Pereira
 <span id="cb37-2"><a href="#cb37-2"></a><span class="fu">head</span>(df)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 39
-  EstacaoCodigo Data  Maxima Minima Media DiaMaxima DiaMinima MediaAnual Vazao01
-          &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;  &lt;chr&gt;     &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;  
-1      38830000 01/0… &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;         NA        NA &lt;NA&gt;       &lt;NA&gt;   
-2      38830000 01/0… &lt;NA&gt;   &lt;NA&gt;   &lt;NA&gt;         NA        NA &lt;NA&gt;       &lt;NA&gt;   
-3      38830000 01/0… 2,8911 0,2548 1011         29         7 &lt;NA&gt;       0,7803 
-4      38830000 01/0… 44,63… 0,7803 3078         12         5 &lt;NA&gt;       1502   
-5      38830000 01/0… 16,03… 0,2548 2,33…        18         1 &lt;NA&gt;       0,2548 
-6      38830000 01/0… 3,4274 0,2548 1,21…         1        26 &lt;NA&gt;       3,4274 
-# ℹ 30 more variables: Vazao02 &lt;chr&gt;, Vazao03 &lt;chr&gt;, Vazao04 &lt;chr&gt;,
-#   Vazao05 &lt;chr&gt;, Vazao06 &lt;chr&gt;, Vazao07 &lt;chr&gt;, Vazao08 &lt;chr&gt;, Vazao09 &lt;chr&gt;,
-#   Vazao10 &lt;chr&gt;, Vazao11 &lt;chr&gt;, Vazao12 &lt;chr&gt;, Vazao13 &lt;chr&gt;, Vazao14 &lt;chr&gt;,
-#   Vazao15 &lt;chr&gt;, Vazao16 &lt;chr&gt;, Vazao17 &lt;chr&gt;, Vazao18 &lt;chr&gt;, Vazao19 &lt;chr&gt;,
-#   Vazao20 &lt;chr&gt;, Vazao21 &lt;chr&gt;, Vazao22 &lt;chr&gt;, Vazao23 &lt;chr&gt;, Vazao24 &lt;chr&gt;,
-#   Vazao25 &lt;chr&gt;, Vazao26 &lt;chr&gt;, Vazao27 &lt;chr&gt;, Vazao28 &lt;chr&gt;, Vazao29 &lt;chr&gt;,
-#   Vazao30 &lt;chr&gt;, Vazao31 &lt;chr&gt;</code></pre>
+  EstacaoCodigo Data     Maxima Minima   Media DiaMaxima DiaMinima MediaAnual
+          &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;
+1      38830000 07/01/22  NA    NA       NA           NA        NA         NA
+2      38830000 06/01/22  NA    NA       NA           NA        NA         NA
+3      38830000 05/01/22   2.89  0.255 1011           29         7         NA
+4      38830000 04/01/22  44.6   0.780 3078           12         5         NA
+5      38830000 03/01/22  16.0   0.255    2.33        18         1         NA
+6      38830000 02/01/22   3.43  0.255    1.22         1        26         NA
+# ℹ 31 more variables: Vazao01 &lt;dbl&gt;, Vazao02 &lt;dbl&gt;, Vazao03 &lt;dbl&gt;,
+#   Vazao04 &lt;dbl&gt;, Vazao05 &lt;dbl&gt;, Vazao06 &lt;dbl&gt;, Vazao07 &lt;dbl&gt;, Vazao08 &lt;dbl&gt;,
+#   Vazao09 &lt;dbl&gt;, Vazao10 &lt;dbl&gt;, Vazao11 &lt;dbl&gt;, Vazao12 &lt;dbl&gt;, Vazao13 &lt;dbl&gt;,
+#   Vazao14 &lt;dbl&gt;, Vazao15 &lt;dbl&gt;, Vazao16 &lt;dbl&gt;, Vazao17 &lt;dbl&gt;, Vazao18 &lt;dbl&gt;,
+#   Vazao19 &lt;dbl&gt;, Vazao20 &lt;dbl&gt;, Vazao21 &lt;dbl&gt;, Vazao22 &lt;dbl&gt;, Vazao23 &lt;dbl&gt;,
+#   Vazao24 &lt;dbl&gt;, Vazao25 &lt;dbl&gt;, Vazao26 &lt;dbl&gt;, Vazao27 &lt;dbl&gt;, Vazao28 &lt;dbl&gt;,
+#   Vazao29 &lt;dbl&gt;, Vazao30 &lt;dbl&gt;, Vazao31 &lt;dbl&gt;</code></pre>
 </div>
 </div>
 </section>
@@ -1580,11 +1580,81 @@ Gabriel de Jesus Pereira
 <span id="cb39-4"><a href="#cb39-4"></a>    <span class="at">Ano =</span> <span class="fu">year</span>(Data),</span>
 <span id="cb39-5"><a href="#cb39-5"></a>    Mês <span class="ot">=</span> <span class="fu">month</span>(Data),</span>
 <span id="cb39-6"><a href="#cb39-6"></a>    <span class="at">Dia =</span> <span class="fu">day</span>(Data)</span>
-<span id="cb39-7"><a href="#cb39-7"></a>    )</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb39-7"><a href="#cb39-7"></a>    )</span>
+<span id="cb39-8"><a href="#cb39-8"></a><span class="fu">head</span>(df)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 42
+  EstacaoCodigo Data     Maxima Minima   Media DiaMaxima DiaMinima MediaAnual
+          &lt;dbl&gt; &lt;date&gt;    &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;
+1      38830000 22-01-07  NA    NA       NA           NA        NA         NA
+2      38830000 22-01-06  NA    NA       NA           NA        NA         NA
+3      38830000 22-01-05   2.89  0.255 1011           29         7         NA
+4      38830000 22-01-04  44.6   0.780 3078           12         5         NA
+5      38830000 22-01-03  16.0   0.255    2.33        18         1         NA
+6      38830000 22-01-02   3.43  0.255    1.22         1        26         NA
+# ℹ 34 more variables: Vazao01 &lt;dbl&gt;, Vazao02 &lt;dbl&gt;, Vazao03 &lt;dbl&gt;,
+#   Vazao04 &lt;dbl&gt;, Vazao05 &lt;dbl&gt;, Vazao06 &lt;dbl&gt;, Vazao07 &lt;dbl&gt;, Vazao08 &lt;dbl&gt;,
+#   Vazao09 &lt;dbl&gt;, Vazao10 &lt;dbl&gt;, Vazao11 &lt;dbl&gt;, Vazao12 &lt;dbl&gt;, Vazao13 &lt;dbl&gt;,
+#   Vazao14 &lt;dbl&gt;, Vazao15 &lt;dbl&gt;, Vazao16 &lt;dbl&gt;, Vazao17 &lt;dbl&gt;, Vazao18 &lt;dbl&gt;,
+#   Vazao19 &lt;dbl&gt;, Vazao20 &lt;dbl&gt;, Vazao21 &lt;dbl&gt;, Vazao22 &lt;dbl&gt;, Vazao23 &lt;dbl&gt;,
+#   Vazao24 &lt;dbl&gt;, Vazao25 &lt;dbl&gt;, Vazao26 &lt;dbl&gt;, Vazao27 &lt;dbl&gt;, Vazao28 &lt;dbl&gt;,
+#   Vazao29 &lt;dbl&gt;, Vazao30 &lt;dbl&gt;, Vazao31 &lt;dbl&gt;, Ano &lt;dbl&gt;, Mês &lt;dbl&gt;, …</code></pre>
+</div>
 </div>
 </section>
 <section id="calculando-os-acumulados" class="slide level2">
 <h2>Calculando os acumulados</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a>df  <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
+<span id="cb41-2"><a href="#cb41-2"></a>  <span class="fu">select</span>(<span class="sc">-</span> Dia)</span>
+<span id="cb41-3"><a href="#cb41-3"></a></span>
+<span id="cb41-4"><a href="#cb41-4"></a>df <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
+<span id="cb41-5"><a href="#cb41-5"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb41-6"><a href="#cb41-6"></a>    <span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">&quot;Vazao&quot;</span>),</span>
+<span id="cb41-7"><a href="#cb41-7"></a>    <span class="at">names_to =</span> <span class="st">&quot;Dia&quot;</span>,</span>
+<span id="cb41-8"><a href="#cb41-8"></a>    <span class="at">values_to =</span> <span class="st">&quot;Vazão&quot;</span></span>
+<span id="cb41-9"><a href="#cb41-9"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb41-10"><a href="#cb41-10"></a>  <span class="fu">mutate</span>(<span class="at">Dia =</span> <span class="fu">as.double</span>(<span class="fu">str_replace</span>(Dia, <span class="st">&quot;Vazao&quot;</span>, <span class="st">&quot;&quot;</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb41-11"><a href="#cb41-11"></a>  <span class="fu">arrange</span>(Data, Dia)</span>
+<span id="cb41-12"><a href="#cb41-12"></a></span>
+<span id="cb41-13"><a href="#cb41-13"></a><span class="fu">head</span>(df)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 12
+  EstacaoCodigo Data    Maxima Minima Media DiaMaxima DiaMinima MediaAnual
+          &lt;dbl&gt; &lt;date&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;
+1      38830000 0-01-01   4.67      0 0.348        11        25         NA
+2      38830000 0-01-01   4.67      0 0.348        11        25         NA
+3      38830000 0-01-01   4.67      0 0.348        11        25         NA
+4      38830000 0-01-01   4.67      0 0.348        11        25         NA
+5      38830000 0-01-01   4.67      0 0.348        11        25         NA
+6      38830000 0-01-01   4.67      0 0.348        11        25         NA
+# ℹ 4 more variables: Ano &lt;dbl&gt;, Mês &lt;dbl&gt;, Dia &lt;dbl&gt;, Vazão &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a>df <span class="sc">|&gt;</span></span>
+<span id="cb43-2"><a href="#cb43-2"></a>  <span class="fu">group_by</span>(Ano) <span class="sc">|&gt;</span></span>
+<span id="cb43-3"><a href="#cb43-3"></a>  <span class="fu">mutate</span>(<span class="at">Acumulado =</span> <span class="fu">cumsum</span>(Vazão)) <span class="sc">|&gt;</span></span>
+<span id="cb43-4"><a href="#cb43-4"></a>  <span class="fu">ungroup</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 19,499 × 13
+   EstacaoCodigo Data    Maxima Minima Media DiaMaxima DiaMinima MediaAnual
+           &lt;dbl&gt; &lt;date&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;
+ 1      38830000 0-01-01   4.67      0 0.348        11        25         NA
+ 2      38830000 0-01-01   4.67      0 0.348        11        25         NA
+ 3      38830000 0-01-01   4.67      0 0.348        11        25         NA
+ 4      38830000 0-01-01   4.67      0 0.348        11        25         NA
+ 5      38830000 0-01-01   4.67      0 0.348        11        25         NA
+ 6      38830000 0-01-01   4.67      0 0.348        11        25         NA
+ 7      38830000 0-01-01   4.67      0 0.348        11        25         NA
+ 8      38830000 0-01-01   4.67      0 0.348        11        25         NA
+ 9      38830000 0-01-01   4.67      0 0.348        11        25         NA
+10      38830000 0-01-01   4.67      0 0.348        11        25         NA
+# ℹ 19,489 more rows
+# ℹ 5 more variables: Ano &lt;dbl&gt;, Mês &lt;dbl&gt;, Dia &lt;dbl&gt;, Vazão &lt;dbl&gt;,
+#   Acumulado &lt;dbl&gt;</code></pre>
+</div>
+</div>
 
 <div class="footer footer-default">
 

@@ -260,10 +260,31 @@ df <- df |>
     Mês = month(Data),
     Dia = day(Data)
     )
+head(df)
 ```
 
 ## Calculando os acumulados
 
-```{r}
+```{r eval=TRUE}
+df  <- df |>
+  select(- Dia)
 
+df <- df |>
+  pivot_longer(
+    cols = starts_with("Vazao"),
+    names_to = "Dia",
+    values_to = "Vazão"
+  ) |>
+  mutate(Dia = as.double(str_replace(Dia, "Vazao", ""))) |>
+  arrange(Data, Dia)
+
+head(df)
+```
+
+
+```{r eval=TRUE}
+df |>
+  group_by(Ano) |>
+  mutate(Acumulado = cumsum(Vazão)) |>
+  ungroup()
 ```
