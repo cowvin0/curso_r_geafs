@@ -1530,11 +1530,188 @@ Gabriel de Jesus Pereira
 </div>
 </div>
 </section>
-<section id="listas" class="slide level2">
+<section id="listas" class="slide level2 smaller">
 <h2>Listas</h2>
+<p>As listas são semelhantes aos vetores atômicos, com a diferença de que podem conter elementos de diferentes tipos e estruturas de dados:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>minha_lista <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb37-2"><a href="#cb37-2"></a>  <span class="dv">42</span>,</span>
+<span id="cb37-3"><a href="#cb37-3"></a>  <span class="st">&quot;Olá, mundo!&quot;</span>,</span>
+<span id="cb37-4"><a href="#cb37-4"></a>  <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>),</span>
+<span id="cb37-5"><a href="#cb37-5"></a>  <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>, <span class="at">nrow =</span> <span class="dv">3</span>),</span>
+<span id="cb37-6"><a href="#cb37-6"></a>  <span class="fu">list</span>(<span class="at">a =</span> <span class="dv">10</span>, <span class="at">b =</span> <span class="dv">20</span>)</span>
+<span id="cb37-7"><a href="#cb37-7"></a>)</span>
+<span id="cb37-8"><a href="#cb37-8"></a>minha_lista</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] 42
+
+[[2]]
+[1] &quot;Olá, mundo!&quot;
+
+[[3]]
+[1] 1 2 3 4 5
+
+[[4]]
+     [,1] [,2] [,3]
+[1,]    1    4    7
+[2,]    2    5    8
+[3,]    3    6    9
+
+[[5]]
+[[5]]$a
+[1] 10
+
+[[5]]$b
+[1] 20</code></pre>
+</div>
+</div>
 </section>
-<section id="dataframes" class="slide level2">
-<h2>Dataframes</h2>
+<section id="listas-1" class="slide level2 smaller">
+<h2>Listas</h2>
+<p>É possível também nomear os elementos de uma lista e acessar seus elementos pelo nome:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>minha_lista2 <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb39-2"><a href="#cb39-2"></a>  <span class="at">numero =</span> <span class="dv">42</span>,</span>
+<span id="cb39-3"><a href="#cb39-3"></a>  <span class="at">texto =</span> <span class="st">&quot;Olá, mundo!&quot;</span>,</span>
+<span id="cb39-4"><a href="#cb39-4"></a>  <span class="at">vetor =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>),</span>
+<span id="cb39-5"><a href="#cb39-5"></a>  <span class="at">matriz =</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>, <span class="at">nrow =</span> <span class="dv">3</span>),</span>
+<span id="cb39-6"><a href="#cb39-6"></a>  <span class="at">sublista =</span> <span class="fu">list</span>(<span class="at">a =</span> <span class="dv">10</span>, <span class="at">b =</span> <span class="dv">20</span>)</span>
+<span id="cb39-7"><a href="#cb39-7"></a>)</span>
+<span id="cb39-8"><a href="#cb39-8"></a>minha_lista2</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$numero
+[1] 42
+
+$texto
+[1] &quot;Olá, mundo!&quot;
+
+$vetor
+[1] 1 2 3 4 5
+
+$matriz
+     [,1] [,2] [,3]
+[1,]    1    4    7
+[2,]    2    5    8
+[3,]    3    6    9
+
+$sublista
+$sublista$a
+[1] 10
+
+$sublista$b
+[1] 20</code></pre>
+</div>
+</div>
+</section>
+<section id="acessando-elementos-de-uma-lista" class="slide level2 smaller">
+<h2>Acessando elementos de uma lista</h2>
+<p>Para acessar elementos de uma lista, é semelhante aos vetores atômicos. Caso seja uma lista sem nomes, basta utilizar colchetes duplos e passar a posição. Veja um exemplo acessando o primeiro elementos da lista <code>minha_lista</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a>minha_lista[[<span class="dv">1</span>]]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 42</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a>minha_lista[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1]]
+[1] 42
+
+[[2]]
+[1] &quot;Olá, mundo!&quot;
+
+[[3]]
+[1] 1 2 3 4 5</code></pre>
+</div>
+</div>
+</section>
+<section id="acessando-elementos-de-uma-lista-1" class="slide level2">
+<h2>Acessando elementos de uma lista</h2>
+<p>Acessando pelo nome na lista <code>minha_lista2</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a>minha_lista2<span class="sc">$</span>vetor</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 2 3 4 5</code></pre>
+</div>
+</div>
+<p>É possível também acessar o elemento com os colchetes duplos:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a>minha_lista2[[<span class="st">&quot;vetor&quot;</span>]]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 2 3 4 5</code></pre>
+</div>
+</div>
+</section>
+<section id="data-frames" class="slide level2">
+<h2>Data Frames</h2>
+<p>O Data Frame é a estrutura de dados em R que representam os dados como uma tabela. Assim como as listas, eles podem ter elementos de diferentes tipos de dados, mas os elementos de suas colunas devem ser do mesmo tipo.</p>
+</section>
+<section id="como-criar-um-data-frame" class="slide level2 smaller">
+<h2>Como criar um Data Frame</h2>
+<p>Para a criação de um Data Frame, podemos utilizar a função <code>data.frame</code>. Veja um exemplo:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a>meu_dataframe <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb49-2"><a href="#cb49-2"></a>  <span class="at">pessoa =</span> <span class="fu">c</span>(<span class="st">&quot;Batman&quot;</span>, <span class="st">&quot;Dr. Manhattan&quot;</span>, <span class="st">&quot;Simone&quot;</span>),</span>
+<span id="cb49-3"><a href="#cb49-3"></a>  <span class="at">idade =</span> <span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">43</span>, <span class="dv">45</span>),</span>
+<span id="cb49-4"><a href="#cb49-4"></a>  <span class="at">Sexo =</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">&quot;M&quot;</span>, <span class="st">&quot;M&quot;</span>, <span class="st">&quot;F&quot;</span>))</span>
+<span id="cb49-5"><a href="#cb49-5"></a>)</span>
+<span id="cb49-6"><a href="#cb49-6"></a>meu_dataframe</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>         pessoa idade Sexo
+1        Batman    30    M
+2 Dr. Manhattan    43    M
+3        Simone    45    F</code></pre>
+</div>
+</div>
+<p>Podemos acessar os elementos da mesma forma que uma matriz:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a>meu_dataframe[<span class="dv">2</span>, <span class="dv">2</span>]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 43</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a>meu_dataframe[<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>, <span class="dv">3</span>]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] M F
+Levels: F M</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a>meu_dataframe[, <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">1</span>)]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Sexo        pessoa
+1    M        Batman
+2    M Dr. Manhattan
+3    F        Simone</code></pre>
+</div>
+</div>
+</section>
+<section id="acessando-elementos-de-um-data-frame" class="slide level2 smaller">
+<h2>Acessando elementos de um Data Frame</h2>
+<p>Você também pode acessar os vetores passados para o data frame utilizando seu nome:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1"></a>meu_dataframe<span class="sc">$</span>pessoa</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] &quot;Batman&quot;        &quot;Dr. Manhattan&quot; &quot;Simone&quot;       </code></pre>
+</div>
+</div>
+<p>Para saber a quantidade de dimensões, linhas e colunas um data frame tem, podemos utilizar a função <code>dim</code>, <code>nrow</code> e <code>ncol</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1"></a><span class="fu">dim</span>(meu_dataframe)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3 3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1"></a><span class="fu">nrow</span>(meu_dataframe)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1"></a><span class="fu">ncol</span>(meu_dataframe)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3</code></pre>
+</div>
+</div>
+</section>
+<section id="combinando-data-frames" class="slide level2">
+<h2>Combinando Data Frames</h2>
 </section></section>
 <section>
 <section id="tidyverse" class="title-slide slide level1 center">
@@ -1549,8 +1726,8 @@ Gabriel de Jesus Pereira
 <h2>Como importar um banco de dados</h2>
 <p>O pacote do tidyverse que serve para importação de banco de dados, é o <code>readr</code>. Por exemplo, podemos utilizar a função <code>read_csv</code> para ler um arquivo <code>.csv</code>. Veja um exemplo com dados de Vazão:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;vazao.csv&quot;</span>)</span>
-<span id="cb37-2"><a href="#cb37-2"></a><span class="fu">head</span>(df)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;vazao.csv&quot;</span>)</span>
+<span id="cb65-2"><a href="#cb65-2"></a><span class="fu">head</span>(df)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 39
   EstacaoCodigo Data     Maxima Minima   Media DiaMaxima DiaMinima MediaAnual
@@ -1574,14 +1751,14 @@ Gabriel de Jesus Pereira
 <section id="lidando-com-datas" class="slide level2">
 <h2>Lidando com datas</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
-<span id="cb39-2"><a href="#cb39-2"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb39-3"><a href="#cb39-3"></a>    <span class="at">Data =</span> <span class="fu">as.Date</span>(Data, <span class="at">format =</span> <span class="st">&quot;%d/%m/%Y&quot;</span>),</span>
-<span id="cb39-4"><a href="#cb39-4"></a>    <span class="at">Ano =</span> <span class="fu">year</span>(Data),</span>
-<span id="cb39-5"><a href="#cb39-5"></a>    Mês <span class="ot">=</span> <span class="fu">month</span>(Data),</span>
-<span id="cb39-6"><a href="#cb39-6"></a>    <span class="at">Dia =</span> <span class="fu">day</span>(Data)</span>
-<span id="cb39-7"><a href="#cb39-7"></a>    )</span>
-<span id="cb39-8"><a href="#cb39-8"></a><span class="fu">head</span>(df)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
+<span id="cb67-2"><a href="#cb67-2"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb67-3"><a href="#cb67-3"></a>    <span class="at">Data =</span> <span class="fu">as.Date</span>(Data, <span class="at">format =</span> <span class="st">&quot;%d/%m/%Y&quot;</span>),</span>
+<span id="cb67-4"><a href="#cb67-4"></a>    <span class="at">Ano =</span> <span class="fu">year</span>(Data),</span>
+<span id="cb67-5"><a href="#cb67-5"></a>    Mês <span class="ot">=</span> <span class="fu">month</span>(Data),</span>
+<span id="cb67-6"><a href="#cb67-6"></a>    <span class="at">Dia =</span> <span class="fu">day</span>(Data)</span>
+<span id="cb67-7"><a href="#cb67-7"></a>    )</span>
+<span id="cb67-8"><a href="#cb67-8"></a><span class="fu">head</span>(df)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 42
   EstacaoCodigo Data     Maxima Minima   Media DiaMaxima DiaMinima MediaAnual
@@ -1605,19 +1782,19 @@ Gabriel de Jesus Pereira
 <section id="calculando-os-acumulados" class="slide level2">
 <h2>Calculando os acumulados</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a>df  <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
-<span id="cb41-2"><a href="#cb41-2"></a>  <span class="fu">select</span>(<span class="sc">-</span> Dia)</span>
-<span id="cb41-3"><a href="#cb41-3"></a></span>
-<span id="cb41-4"><a href="#cb41-4"></a>df <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
-<span id="cb41-5"><a href="#cb41-5"></a>  <span class="fu">pivot_longer</span>(</span>
-<span id="cb41-6"><a href="#cb41-6"></a>    <span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">&quot;Vazao&quot;</span>),</span>
-<span id="cb41-7"><a href="#cb41-7"></a>    <span class="at">names_to =</span> <span class="st">&quot;Dia&quot;</span>,</span>
-<span id="cb41-8"><a href="#cb41-8"></a>    <span class="at">values_to =</span> <span class="st">&quot;Vazão&quot;</span></span>
-<span id="cb41-9"><a href="#cb41-9"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb41-10"><a href="#cb41-10"></a>  <span class="fu">mutate</span>(<span class="at">Dia =</span> <span class="fu">as.double</span>(<span class="fu">str_replace</span>(Dia, <span class="st">&quot;Vazao&quot;</span>, <span class="st">&quot;&quot;</span>))) <span class="sc">|&gt;</span></span>
-<span id="cb41-11"><a href="#cb41-11"></a>  <span class="fu">arrange</span>(Data, Dia)</span>
-<span id="cb41-12"><a href="#cb41-12"></a></span>
-<span id="cb41-13"><a href="#cb41-13"></a><span class="fu">head</span>(df)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1"></a>df  <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
+<span id="cb69-2"><a href="#cb69-2"></a>  <span class="fu">select</span>(<span class="sc">-</span> Dia)</span>
+<span id="cb69-3"><a href="#cb69-3"></a></span>
+<span id="cb69-4"><a href="#cb69-4"></a>df <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
+<span id="cb69-5"><a href="#cb69-5"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb69-6"><a href="#cb69-6"></a>    <span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">&quot;Vazao&quot;</span>),</span>
+<span id="cb69-7"><a href="#cb69-7"></a>    <span class="at">names_to =</span> <span class="st">&quot;Dia&quot;</span>,</span>
+<span id="cb69-8"><a href="#cb69-8"></a>    <span class="at">values_to =</span> <span class="st">&quot;Vazão&quot;</span></span>
+<span id="cb69-9"><a href="#cb69-9"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb69-10"><a href="#cb69-10"></a>  <span class="fu">mutate</span>(<span class="at">Dia =</span> <span class="fu">as.double</span>(<span class="fu">str_replace</span>(Dia, <span class="st">&quot;Vazao&quot;</span>, <span class="st">&quot;&quot;</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb69-11"><a href="#cb69-11"></a>  <span class="fu">arrange</span>(Data, Dia)</span>
+<span id="cb69-12"><a href="#cb69-12"></a></span>
+<span id="cb69-13"><a href="#cb69-13"></a><span class="fu">head</span>(df)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 12
   EstacaoCodigo Data    Maxima Minima Media DiaMaxima DiaMinima MediaAnual
@@ -1632,10 +1809,10 @@ Gabriel de Jesus Pereira
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a>df <span class="sc">|&gt;</span></span>
-<span id="cb43-2"><a href="#cb43-2"></a>  <span class="fu">group_by</span>(Ano) <span class="sc">|&gt;</span></span>
-<span id="cb43-3"><a href="#cb43-3"></a>  <span class="fu">mutate</span>(<span class="at">Acumulado =</span> <span class="fu">cumsum</span>(Vazão)) <span class="sc">|&gt;</span></span>
-<span id="cb43-4"><a href="#cb43-4"></a>  <span class="fu">ungroup</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1"></a>df <span class="sc">|&gt;</span></span>
+<span id="cb71-2"><a href="#cb71-2"></a>  <span class="fu">group_by</span>(Ano) <span class="sc">|&gt;</span></span>
+<span id="cb71-3"><a href="#cb71-3"></a>  <span class="fu">mutate</span>(<span class="at">Acumulado =</span> <span class="fu">cumsum</span>(Vazão)) <span class="sc">|&gt;</span></span>
+<span id="cb71-4"><a href="#cb71-4"></a>  <span class="fu">ungroup</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 19,499 × 13
    EstacaoCodigo Data    Maxima Minima Media DiaMaxima DiaMinima MediaAnual
