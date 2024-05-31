@@ -339,9 +339,8 @@ O tidyverse é uma coleção de pacotes que facilita os processos básicos de um
 
 O pacote do tidyverse que serve para importação de banco de dados, é o `readr`. Por exemplo, podemos utilizar a função `read_csv` para ler um arquivo `.csv`. Veja um exemplo com dados de Chuva:
 
-```{r echo=TRUE}
-library(dplyr)
-library(readr)
+```{r echo=TRUE, eval=TRUE}
+library(tidyverse)
 ```
 
 ```{r eval=TRUE}

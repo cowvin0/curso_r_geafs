@@ -1522,10 +1522,10 @@ Gabriel de Jesus Pereira
 <p>Perceba que agora que todos os elementos do vetor convergem para caracter. É possível perceber isso pelas <code>&quot;</code>.</p>
 <p>Substituindo do segundo ao quarto valor:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>meu_vetor2[<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>] <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Pedro&quot;</span>, <span class="st">&quot;Ataline&quot;</span>)</span>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>meu_vetor2[<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>] <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Paulo&quot;</span>, <span class="st">&quot;Ataline&quot;</span>, <span class="st">&quot;Gabriel&quot;</span>)</span>
 <span id="cb35-2"><a href="#cb35-2"></a>meu_vetor2</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] &quot;3&quot;                &quot;Pedro&quot;            &quot;Ataline&quot;          &quot;Pedro&quot;           
+<pre><code>[1] &quot;3&quot;                &quot;Paulo&quot;            &quot;Ataline&quot;          &quot;Gabriel&quot;         
 [5] &quot;1000&quot;             &quot;8&quot;                &quot;2.20127118644068&quot; &quot;5&quot;               </code></pre>
 </div>
 </div>
@@ -1724,113 +1724,100 @@ Levels: F M</code></pre>
 </section>
 <section id="como-importar-um-banco-de-dados" class="slide level2 smaller">
 <h2>Como importar um banco de dados</h2>
-<p>O pacote do tidyverse que serve para importação de banco de dados, é o <code>readr</code>. Por exemplo, podemos utilizar a função <code>read_csv</code> para ler um arquivo <code>.csv</code>. Veja um exemplo com dados de Vazão:</p>
+<p>O pacote do tidyverse que serve para importação de banco de dados, é o <code>readr</code>. Por exemplo, podemos utilizar a função <code>read_csv</code> para ler um arquivo <code>.csv</code>. Veja um exemplo com dados de Chuva:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;vazao.csv&quot;</span>)</span>
-<span id="cb65-2"><a href="#cb65-2"></a><span class="fu">head</span>(df)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;chuva.csv&quot;</span>)</span>
+<span id="cb66-2"><a href="#cb66-2"></a><span class="fu">head</span>(df)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 39
-  EstacaoCodigo Data     Maxima Minima   Media DiaMaxima DiaMinima MediaAnual
-          &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;
-1      38830000 07/01/22  NA    NA       NA           NA        NA         NA
-2      38830000 06/01/22  NA    NA       NA           NA        NA         NA
-3      38830000 05/01/22   2.89  0.255 1011           29         7         NA
-4      38830000 04/01/22  44.6   0.780 3078           12         5         NA
-5      38830000 03/01/22  16.0   0.255    2.33        18         1         NA
-6      38830000 02/01/22   3.43  0.255    1.22         1        26         NA
-# ℹ 31 more variables: Vazao01 &lt;dbl&gt;, Vazao02 &lt;dbl&gt;, Vazao03 &lt;dbl&gt;,
-#   Vazao04 &lt;dbl&gt;, Vazao05 &lt;dbl&gt;, Vazao06 &lt;dbl&gt;, Vazao07 &lt;dbl&gt;, Vazao08 &lt;dbl&gt;,
-#   Vazao09 &lt;dbl&gt;, Vazao10 &lt;dbl&gt;, Vazao11 &lt;dbl&gt;, Vazao12 &lt;dbl&gt;, Vazao13 &lt;dbl&gt;,
-#   Vazao14 &lt;dbl&gt;, Vazao15 &lt;dbl&gt;, Vazao16 &lt;dbl&gt;, Vazao17 &lt;dbl&gt;, Vazao18 &lt;dbl&gt;,
-#   Vazao19 &lt;dbl&gt;, Vazao20 &lt;dbl&gt;, Vazao21 &lt;dbl&gt;, Vazao22 &lt;dbl&gt;, Vazao23 &lt;dbl&gt;,
-#   Vazao24 &lt;dbl&gt;, Vazao25 &lt;dbl&gt;, Vazao26 &lt;dbl&gt;, Vazao27 &lt;dbl&gt;, Vazao28 &lt;dbl&gt;,
-#   Vazao29 &lt;dbl&gt;, Vazao30 &lt;dbl&gt;, Vazao31 &lt;dbl&gt;</code></pre>
+<pre><code># A tibble: 6 × 38
+  EstacaoCodigo Data    Maxima Total DiaMaxima NumDiasDeChuva TotalAnual Chuva01
+          &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;          &lt;dbl&gt;      &lt;dbl&gt;   &lt;dbl&gt;
+1        734006 01/06/…  182.  672.         14             24         NA    11.8
+2        734006 01/05/…   45   204.         21             21         NA     0.2
+3        734006 01/04/…   53   183.          1             24         NA    53  
+4        734006 01/03/…   55.4 240.         27             20         NA     0  
+5        734006 01/02/…   71   201.         13             NA         NA     0.4
+6        734006 01/01/…   28.4  72.6        27              8         NA     0  
+# ℹ 30 more variables: Chuva02 &lt;dbl&gt;, Chuva03 &lt;dbl&gt;, Chuva04 &lt;dbl&gt;,
+#   Chuva05 &lt;dbl&gt;, Chuva06 &lt;dbl&gt;, Chuva07 &lt;dbl&gt;, Chuva08 &lt;dbl&gt;, Chuva09 &lt;dbl&gt;,
+#   Chuva10 &lt;dbl&gt;, Chuva11 &lt;dbl&gt;, Chuva12 &lt;dbl&gt;, Chuva13 &lt;dbl&gt;, Chuva14 &lt;dbl&gt;,
+#   Chuva15 &lt;dbl&gt;, Chuva16 &lt;dbl&gt;, Chuva17 &lt;dbl&gt;, Chuva18 &lt;dbl&gt;, Chuva19 &lt;dbl&gt;,
+#   Chuva20 &lt;dbl&gt;, Chuva21 &lt;dbl&gt;, Chuva22 &lt;dbl&gt;, Chuva23 &lt;dbl&gt;, Chuva24 &lt;dbl&gt;,
+#   Chuva25 &lt;dbl&gt;, Chuva26 &lt;dbl&gt;, Chuva27 &lt;dbl&gt;, Chuva28 &lt;dbl&gt;, Chuva29 &lt;dbl&gt;,
+#   Chuva30 &lt;dbl&gt;, Chuva31 &lt;dbl&gt;</code></pre>
 </div>
 </div>
 </section>
 <section id="lidando-com-datas" class="slide level2">
 <h2>Lidando com datas</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
-<span id="cb67-2"><a href="#cb67-2"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb67-3"><a href="#cb67-3"></a>    <span class="at">Data =</span> <span class="fu">as.Date</span>(Data, <span class="at">format =</span> <span class="st">&quot;%d/%m/%Y&quot;</span>),</span>
-<span id="cb67-4"><a href="#cb67-4"></a>    <span class="at">Ano =</span> <span class="fu">year</span>(Data),</span>
-<span id="cb67-5"><a href="#cb67-5"></a>    Mês <span class="ot">=</span> <span class="fu">month</span>(Data),</span>
-<span id="cb67-6"><a href="#cb67-6"></a>    <span class="at">Dia =</span> <span class="fu">day</span>(Data)</span>
-<span id="cb67-7"><a href="#cb67-7"></a>    )</span>
-<span id="cb67-8"><a href="#cb67-8"></a><span class="fu">head</span>(df)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
+<span id="cb68-2"><a href="#cb68-2"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb68-3"><a href="#cb68-3"></a>    <span class="at">Data =</span> <span class="fu">as.Date</span>(Data, <span class="at">format =</span> <span class="st">&quot;%d/%m/%Y&quot;</span>),</span>
+<span id="cb68-4"><a href="#cb68-4"></a>    <span class="at">Ano =</span> <span class="fu">year</span>(Data),</span>
+<span id="cb68-5"><a href="#cb68-5"></a>    Mês <span class="ot">=</span> <span class="fu">month</span>(Data),</span>
+<span id="cb68-6"><a href="#cb68-6"></a>    <span class="at">Dia =</span> <span class="fu">day</span>(Data)</span>
+<span id="cb68-7"><a href="#cb68-7"></a>    ) <span class="sc">|&gt;</span></span>
+<span id="cb68-8"><a href="#cb68-8"></a>    <span class="fu">drop_na</span>(Data)</span>
+<span id="cb68-9"><a href="#cb68-9"></a><span class="fu">head</span>(df)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 42
-  EstacaoCodigo Data     Maxima Minima   Media DiaMaxima DiaMinima MediaAnual
-          &lt;dbl&gt; &lt;date&gt;    &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;
-1      38830000 22-01-07  NA    NA       NA           NA        NA         NA
-2      38830000 22-01-06  NA    NA       NA           NA        NA         NA
-3      38830000 22-01-05   2.89  0.255 1011           29         7         NA
-4      38830000 22-01-04  44.6   0.780 3078           12         5         NA
-5      38830000 22-01-03  16.0   0.255    2.33        18         1         NA
-6      38830000 22-01-02   3.43  0.255    1.22         1        26         NA
-# ℹ 34 more variables: Vazao01 &lt;dbl&gt;, Vazao02 &lt;dbl&gt;, Vazao03 &lt;dbl&gt;,
-#   Vazao04 &lt;dbl&gt;, Vazao05 &lt;dbl&gt;, Vazao06 &lt;dbl&gt;, Vazao07 &lt;dbl&gt;, Vazao08 &lt;dbl&gt;,
-#   Vazao09 &lt;dbl&gt;, Vazao10 &lt;dbl&gt;, Vazao11 &lt;dbl&gt;, Vazao12 &lt;dbl&gt;, Vazao13 &lt;dbl&gt;,
-#   Vazao14 &lt;dbl&gt;, Vazao15 &lt;dbl&gt;, Vazao16 &lt;dbl&gt;, Vazao17 &lt;dbl&gt;, Vazao18 &lt;dbl&gt;,
-#   Vazao19 &lt;dbl&gt;, Vazao20 &lt;dbl&gt;, Vazao21 &lt;dbl&gt;, Vazao22 &lt;dbl&gt;, Vazao23 &lt;dbl&gt;,
-#   Vazao24 &lt;dbl&gt;, Vazao25 &lt;dbl&gt;, Vazao26 &lt;dbl&gt;, Vazao27 &lt;dbl&gt;, Vazao28 &lt;dbl&gt;,
-#   Vazao29 &lt;dbl&gt;, Vazao30 &lt;dbl&gt;, Vazao31 &lt;dbl&gt;, Ano &lt;dbl&gt;, Mês &lt;dbl&gt;, …</code></pre>
+<pre><code># A tibble: 6 × 41
+  EstacaoCodigo Data       Maxima Total DiaMaxima NumDiasDeChuva TotalAnual
+          &lt;dbl&gt; &lt;date&gt;      &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;          &lt;dbl&gt;      &lt;dbl&gt;
+1        734006 2019-06-01  182.  672.         14             24         NA
+2        734006 2019-05-01   45   204.         21             21         NA
+3        734006 2019-04-01   53   183.          1             24         NA
+4        734006 2019-03-01   55.4 240.         27             20         NA
+5        734006 2019-02-01   71   201.         13             NA         NA
+6        734006 2019-01-01   28.4  72.6        27              8         NA
+# ℹ 34 more variables: Chuva01 &lt;dbl&gt;, Chuva02 &lt;dbl&gt;, Chuva03 &lt;dbl&gt;,
+#   Chuva04 &lt;dbl&gt;, Chuva05 &lt;dbl&gt;, Chuva06 &lt;dbl&gt;, Chuva07 &lt;dbl&gt;, Chuva08 &lt;dbl&gt;,
+#   Chuva09 &lt;dbl&gt;, Chuva10 &lt;dbl&gt;, Chuva11 &lt;dbl&gt;, Chuva12 &lt;dbl&gt;, Chuva13 &lt;dbl&gt;,
+#   Chuva14 &lt;dbl&gt;, Chuva15 &lt;dbl&gt;, Chuva16 &lt;dbl&gt;, Chuva17 &lt;dbl&gt;, Chuva18 &lt;dbl&gt;,
+#   Chuva19 &lt;dbl&gt;, Chuva20 &lt;dbl&gt;, Chuva21 &lt;dbl&gt;, Chuva22 &lt;dbl&gt;, Chuva23 &lt;dbl&gt;,
+#   Chuva24 &lt;dbl&gt;, Chuva25 &lt;dbl&gt;, Chuva26 &lt;dbl&gt;, Chuva27 &lt;dbl&gt;, Chuva28 &lt;dbl&gt;,
+#   Chuva29 &lt;dbl&gt;, Chuva30 &lt;dbl&gt;, Chuva31 &lt;dbl&gt;, Ano &lt;dbl&gt;, Mês &lt;dbl&gt;, …</code></pre>
 </div>
 </div>
 </section>
 <section id="calculando-os-acumulados" class="slide level2">
 <h2>Calculando os acumulados</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1"></a>df  <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
-<span id="cb69-2"><a href="#cb69-2"></a>  <span class="fu">select</span>(<span class="sc">-</span> Dia)</span>
-<span id="cb69-3"><a href="#cb69-3"></a></span>
-<span id="cb69-4"><a href="#cb69-4"></a>df <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
-<span id="cb69-5"><a href="#cb69-5"></a>  <span class="fu">pivot_longer</span>(</span>
-<span id="cb69-6"><a href="#cb69-6"></a>    <span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">&quot;Vazao&quot;</span>),</span>
-<span id="cb69-7"><a href="#cb69-7"></a>    <span class="at">names_to =</span> <span class="st">&quot;Dia&quot;</span>,</span>
-<span id="cb69-8"><a href="#cb69-8"></a>    <span class="at">values_to =</span> <span class="st">&quot;Vazão&quot;</span></span>
-<span id="cb69-9"><a href="#cb69-9"></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb69-10"><a href="#cb69-10"></a>  <span class="fu">mutate</span>(<span class="at">Dia =</span> <span class="fu">as.double</span>(<span class="fu">str_replace</span>(Dia, <span class="st">&quot;Vazao&quot;</span>, <span class="st">&quot;&quot;</span>))) <span class="sc">|&gt;</span></span>
-<span id="cb69-11"><a href="#cb69-11"></a>  <span class="fu">arrange</span>(Data, Dia)</span>
-<span id="cb69-12"><a href="#cb69-12"></a></span>
-<span id="cb69-13"><a href="#cb69-13"></a><span class="fu">head</span>(df)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1"></a>df  <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
+<span id="cb70-2"><a href="#cb70-2"></a>  <span class="fu">select</span>(<span class="sc">-</span> Dia)</span>
+<span id="cb70-3"><a href="#cb70-3"></a></span>
+<span id="cb70-4"><a href="#cb70-4"></a>df <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
+<span id="cb70-5"><a href="#cb70-5"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb70-6"><a href="#cb70-6"></a>    <span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">&quot;Chuva&quot;</span>),</span>
+<span id="cb70-7"><a href="#cb70-7"></a>    <span class="at">names_to =</span> <span class="st">&quot;Dia&quot;</span>,</span>
+<span id="cb70-8"><a href="#cb70-8"></a>    <span class="at">values_to =</span> <span class="st">&quot;Chuva&quot;</span></span>
+<span id="cb70-9"><a href="#cb70-9"></a>  ) <span class="sc">|&gt;</span></span>
+<span id="cb70-10"><a href="#cb70-10"></a>  <span class="fu">mutate</span>(<span class="at">Dia =</span> <span class="fu">as.double</span>(<span class="fu">str_replace</span>(Dia, <span class="st">&quot;Chuva&quot;</span>, <span class="st">&quot;&quot;</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb70-11"><a href="#cb70-11"></a>  <span class="fu">arrange</span>(Data, Dia)</span>
+<span id="cb70-12"><a href="#cb70-12"></a></span>
+<span id="cb70-13"><a href="#cb70-13"></a><span class="fu">head</span>(df)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 12
-  EstacaoCodigo Data    Maxima Minima Media DiaMaxima DiaMinima MediaAnual
-          &lt;dbl&gt; &lt;date&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;
-1      38830000 0-01-01   4.67      0 0.348        11        25         NA
-2      38830000 0-01-01   4.67      0 0.348        11        25         NA
-3      38830000 0-01-01   4.67      0 0.348        11        25         NA
-4      38830000 0-01-01   4.67      0 0.348        11        25         NA
-5      38830000 0-01-01   4.67      0 0.348        11        25         NA
-6      38830000 0-01-01   4.67      0 0.348        11        25         NA
-# ℹ 4 more variables: Ano &lt;dbl&gt;, Mês &lt;dbl&gt;, Dia &lt;dbl&gt;, Vazão &lt;dbl&gt;</code></pre>
+<pre><code># A tibble: 6 × 11
+  EstacaoCodigo Data       Maxima Total DiaMaxima NumDiasDeChuva TotalAnual
+          &lt;dbl&gt; &lt;date&gt;      &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;          &lt;dbl&gt;      &lt;dbl&gt;
+1        734006 1901-01-01     26  27.4        31              2       735.
+2        734006 1901-01-01     26  27.4        31              2       735.
+3        734006 1901-01-01     26  27.4        31              2       735.
+4        734006 1901-01-01     26  27.4        31              2       735.
+5        734006 1901-01-01     26  27.4        31              2       735.
+6        734006 1901-01-01     26  27.4        31              2       735.
+# ℹ 4 more variables: Ano &lt;dbl&gt;, Mês &lt;dbl&gt;, Dia &lt;dbl&gt;, Chuva &lt;dbl&gt;</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1"></a>df <span class="sc">|&gt;</span></span>
-<span id="cb71-2"><a href="#cb71-2"></a>  <span class="fu">group_by</span>(Ano) <span class="sc">|&gt;</span></span>
-<span id="cb71-3"><a href="#cb71-3"></a>  <span class="fu">mutate</span>(<span class="at">Acumulado =</span> <span class="fu">cumsum</span>(Vazão)) <span class="sc">|&gt;</span></span>
-<span id="cb71-4"><a href="#cb71-4"></a>  <span class="fu">ungroup</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 19,499 × 13
-   EstacaoCodigo Data    Maxima Minima Media DiaMaxima DiaMinima MediaAnual
-           &lt;dbl&gt; &lt;date&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;
- 1      38830000 0-01-01   4.67      0 0.348        11        25         NA
- 2      38830000 0-01-01   4.67      0 0.348        11        25         NA
- 3      38830000 0-01-01   4.67      0 0.348        11        25         NA
- 4      38830000 0-01-01   4.67      0 0.348        11        25         NA
- 5      38830000 0-01-01   4.67      0 0.348        11        25         NA
- 6      38830000 0-01-01   4.67      0 0.348        11        25         NA
- 7      38830000 0-01-01   4.67      0 0.348        11        25         NA
- 8      38830000 0-01-01   4.67      0 0.348        11        25         NA
- 9      38830000 0-01-01   4.67      0 0.348        11        25         NA
-10      38830000 0-01-01   4.67      0 0.348        11        25         NA
-# ℹ 19,489 more rows
-# ℹ 5 more variables: Ano &lt;dbl&gt;, Mês &lt;dbl&gt;, Dia &lt;dbl&gt;, Vazão &lt;dbl&gt;,
-#   Acumulado &lt;dbl&gt;</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1"></a>final  <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="st">&quot;2019-01-01&quot;</span>)</span>
+<span id="cb72-2"><a href="#cb72-2"></a></span>
+<span id="cb72-3"><a href="#cb72-3"></a>df <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
+<span id="cb72-4"><a href="#cb72-4"></a>  <span class="fu">filter</span>(<span class="fu">between</span>(Data, final <span class="sc">-</span> <span class="fu">days</span>(<span class="dv">360</span>), final)) <span class="sc">|&gt;</span></span>
+<span id="cb72-5"><a href="#cb72-5"></a>  <span class="fu">mutate</span>(<span class="at">Acumulado =</span> <span class="fu">cumsum</span>(Chuva))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 <div class="footer footer-default">
