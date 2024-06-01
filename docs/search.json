@@ -28,6 +28,20 @@
     "text": "Operações matemáticas básicas\n\nResumo das operações matemáticas\n\n\nOperação\nNome\nExemplo\n\n\n\n\n+\nAdição\nx + y\n\n\n-\nSubtração\nx - y\n\n\n*\nMultiplicação\nx * y\n\n\n/\nDivisão\nx / y\n\n\n^\nExpoente\nx ^ y\n\n\n%%\nResto da divisão (Módulo)\nx %% y\n\n\n%/%\nDivisão inteira\nx %/% y"
   },
   {
+    "objectID": "gabriel_curso_r.html#operações-de-comparação",
+    "href": "gabriel_curso_r.html#operações-de-comparação",
+    "title": "Introdução à linguagem de programação R",
+    "section": "Operações de comparação",
+    "text": "Operações de comparação\nOs operadores de comparação são utilizados para comparar dois valores\n\n\n\nOperadores\nNome\nExemplo\n\n\n\n\n\nIgual\nx == y\n\n\n\nNao igual\nx != y\n\n\n\nMaior que\nx &gt; y\n\n\n\nMenor que\nx &lt; y\n\n\n\nMaior ou igual que\nx &gt;= y\n\n\n\nMenor ou igual que\nx &lt;= y"
+  },
+  {
+    "objectID": "gabriel_curso_r.html#operações-lógicas",
+    "href": "gabriel_curso_r.html#operações-lógicas",
+    "title": "Introdução à linguagem de programação R",
+    "section": "Operações lógicas",
+    "text": "Operações lógicas\nOperadores lógicos são usados para combinar declarações condicionais:\n\n\n\nOperadores\nNome\n\n\n\n\n&\nRetorna TRUE se os dois elementos sao verdadeiros\n\n\n&&\nRetorna TRUE se ambas as afirmações forem verdadeiras.\n\n\n|\nEle retorna TRUE se uma das afirmações for verdadeira.\n\n\n||\nEle retorna TRUE se uma das afirmações for verdadeira.\n\n\n!\nRetorna FALSE se a afirmaçao for verdadeira"
+  },
+  {
     "objectID": "gabriel_curso_r.html#assinando-objetos",
     "href": "gabriel_curso_r.html#assinando-objetos",
     "title": "Introdução à linguagem de programação R",

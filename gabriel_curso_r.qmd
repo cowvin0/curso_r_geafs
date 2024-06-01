@@ -85,6 +85,30 @@ exp(2)
 |    %%    | Resto da divisão (Módulo) | `x %% y`  |
 |   %/%    |      Divisão inteira      | `x %/% y` |
 
+## Operações de comparação
+
+Os operadores de comparação são utilizados para comparar dois valores
+
+| Operadores | Nome | Exemplo |
+|:---:|:---:|:---:|
+|  | Igual | `x == y` |
+| | Nao igual | `x != y ` |
+| | Maior que | `x > y` |
+| | Menor que | `x < y` |
+|  | Maior ou igual que | `x >= y`  |
+|  | Menor ou igual que | `x <= y ` |
+
+## Operações lógicas {.smaller}
+
+Operadores lógicos são usados para combinar declarações condicionais:
+
+| Operadores | Nome |
+|:---:|:---:|
+| & | Retorna TRUE se os dois elementos sao verdadeiros |
+| && | Retorna TRUE se ambas as afirmações forem verdadeiras. |
+| \| | Ele retorna TRUE se uma das afirmações for verdadeira. |
+| \|\| | Ele retorna TRUE se uma das afirmações for verdadeira. |
+| ! |  Retorna FALSE se a afirmaçao for verdadeira |
 
 ## Assinando objetos {.smaller}
 
