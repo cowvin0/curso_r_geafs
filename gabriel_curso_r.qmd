@@ -295,7 +295,7 @@ Para a criação de um Data Frame, podemos utilizar a função `data.frame`. Vej
 
 ```{r eval=TRUE}
 meu_dataframe <- data.frame(
-  pessoa = c("Batman", "Dr. Manhattan", "Simone"),
+  pessoa = c("Bruce", "Dr. Manhattan", "Simone"),
   idade = c(30, 43, 45),
   Sexo = factor(c("M", "M", "F"))
 )
@@ -326,8 +326,41 @@ nrow(meu_dataframe)
 ncol(meu_dataframe)
 ```
 
-## Combinando Data Frames
+## Combinando Data Frames {.smaller}
 
+A função `rbind` serve para unir dois data frames (ou matrizes) por linha, ou por coluna com a função `cbind`:
+
+```{r eval=TRUE}
+meu_dataframe2 <- data.frame(
+  pessoa="Brian",
+  idade=7,
+  Sexo=factor("M",levels=levels(meu_dataframe$Sexo))
+  )
+
+# Juntando por linha
+
+rbind(meu_dataframe, meu_dataframe2)
+```
+
+## Combinando Data Frames {.smaller}
+
+Agora, utilizando a função `rbind`, podemos combinar dois data frames como se estivessemos adicionando novas variáveis ao banco de dados:
+
+```{r eval=TRUE}
+meu_dataframe3 <- data.frame(
+  sobrenome = c("Wayne", "Osterman", "Pereira"),
+  filme = c("Batman", "Watchman", NA)
+)
+
+cbind(meu_dataframe, meu_dataframe3)
+```
+
+Podemos adicionar variáveis utilizando o cifrão:
+
+```{r eval=TRUE}
+meu_dataframe3$quadrinhos <- c("Sim", "Sim", "Não")
+meu_dataframe3
+```
 
 # Tidyverse
 

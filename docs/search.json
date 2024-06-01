@@ -116,21 +116,28 @@
     "href": "gabriel_curso_r.html#como-criar-um-data-frame",
     "title": "Introdução à linguagem de programação R",
     "section": "Como criar um Data Frame",
-    "text": "Como criar um Data Frame\nPara a criação de um Data Frame, podemos utilizar a função data.frame. Veja um exemplo:\n\nmeu_dataframe &lt;- data.frame(\n  pessoa = c(\"Batman\", \"Dr. Manhattan\", \"Simone\"),\n  idade = c(30, 43, 45),\n  Sexo = factor(c(\"M\", \"M\", \"F\"))\n)\nmeu_dataframe\n\n         pessoa idade Sexo\n1        Batman    30    M\n2 Dr. Manhattan    43    M\n3        Simone    45    F\n\n\nPodemos acessar os elementos da mesma forma que uma matriz:\n\nmeu_dataframe[2, 2]\n\n[1] 43\n\nmeu_dataframe[2:3, 3]\n\n[1] M F\nLevels: F M\n\nmeu_dataframe[, c(3, 1)]\n\n  Sexo        pessoa\n1    M        Batman\n2    M Dr. Manhattan\n3    F        Simone"
+    "text": "Como criar um Data Frame\nPara a criação de um Data Frame, podemos utilizar a função data.frame. Veja um exemplo:\n\nmeu_dataframe &lt;- data.frame(\n  pessoa = c(\"Bruce\", \"Dr. Manhattan\", \"Simone\"),\n  idade = c(30, 43, 45),\n  Sexo = factor(c(\"M\", \"M\", \"F\"))\n)\nmeu_dataframe\n\n         pessoa idade Sexo\n1         Bruce    30    M\n2 Dr. Manhattan    43    M\n3        Simone    45    F\n\n\nPodemos acessar os elementos da mesma forma que uma matriz:\n\nmeu_dataframe[2, 2]\n\n[1] 43\n\nmeu_dataframe[2:3, 3]\n\n[1] M F\nLevels: F M\n\nmeu_dataframe[, c(3, 1)]\n\n  Sexo        pessoa\n1    M         Bruce\n2    M Dr. Manhattan\n3    F        Simone"
   },
   {
     "objectID": "gabriel_curso_r.html#acessando-elementos-de-um-data-frame",
     "href": "gabriel_curso_r.html#acessando-elementos-de-um-data-frame",
     "title": "Introdução à linguagem de programação R",
     "section": "Acessando elementos de um Data Frame",
-    "text": "Acessando elementos de um Data Frame\nVocê também pode acessar os vetores passados para o data frame utilizando seu nome:\n\nmeu_dataframe$pessoa\n\n[1] \"Batman\"        \"Dr. Manhattan\" \"Simone\"       \n\n\nPara saber a quantidade de dimensões, linhas e colunas um data frame tem, podemos utilizar a função dim, nrow e ncol:\n\ndim(meu_dataframe)\n\n[1] 3 3\n\nnrow(meu_dataframe)\n\n[1] 3\n\nncol(meu_dataframe)\n\n[1] 3"
+    "text": "Acessando elementos de um Data Frame\nVocê também pode acessar os vetores passados para o data frame utilizando seu nome:\n\nmeu_dataframe$pessoa\n\n[1] \"Bruce\"         \"Dr. Manhattan\" \"Simone\"       \n\n\nPara saber a quantidade de dimensões, linhas e colunas um data frame tem, podemos utilizar a função dim, nrow e ncol:\n\ndim(meu_dataframe)\n\n[1] 3 3\n\nnrow(meu_dataframe)\n\n[1] 3\n\nncol(meu_dataframe)\n\n[1] 3"
   },
   {
     "objectID": "gabriel_curso_r.html#combinando-data-frames",
     "href": "gabriel_curso_r.html#combinando-data-frames",
     "title": "Introdução à linguagem de programação R",
     "section": "Combinando Data Frames",
-    "text": "Combinando Data Frames"
+    "text": "Combinando Data Frames\nA função rbind serve para unir dois data frames (ou matrizes) por linha, ou por coluna com a função cbind:\n\nmeu_dataframe2 &lt;- data.frame(\n  pessoa=\"Brian\",\n  idade=7,\n  Sexo=factor(\"M\",levels=levels(meu_dataframe$Sexo))\n  )\n\n# Juntando por linha\n\nrbind(meu_dataframe, meu_dataframe2)\n\n         pessoa idade Sexo\n1         Bruce    30    M\n2 Dr. Manhattan    43    M\n3        Simone    45    F\n4         Brian     7    M"
+  },
+  {
+    "objectID": "gabriel_curso_r.html#combinando-data-frames-1",
+    "href": "gabriel_curso_r.html#combinando-data-frames-1",
+    "title": "Introdução à linguagem de programação R",
+    "section": "Combinando Data Frames",
+    "text": "Combinando Data Frames\nAgora, utilizando a função rbind, podemos combinar dois data frames como se estivessemos adicionando novas variáveis ao banco de dados:\n\nmeu_dataframe3 &lt;- data.frame(\n  sobrenome = c(\"Wayne\", \"Osterman\", \"Pereira\"),\n  filme = c(\"Batman\", \"Watchman\", NA)\n)\n\ncbind(meu_dataframe, meu_dataframe3)\n\n         pessoa idade Sexo sobrenome    filme\n1         Bruce    30    M     Wayne   Batman\n2 Dr. Manhattan    43    M  Osterman Watchman\n3        Simone    45    F   Pereira     &lt;NA&gt;\n\n\nPodemos adicionar variáveis utilizando o cifrão:\n\nmeu_dataframe3$quadrinhos &lt;- c(\"Sim\", \"Sim\", \"Não\")\nmeu_dataframe3\n\n  sobrenome    filme quadrinhos\n1     Wayne   Batman        Sim\n2  Osterman Watchman        Sim\n3   Pereira     &lt;NA&gt;        Não"
   },
   {
     "objectID": "gabriel_curso_r.html#o-que-é-o-tidyverse",
