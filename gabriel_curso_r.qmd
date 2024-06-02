@@ -441,11 +441,7 @@ head(df)
 
 
 ```{r eval=TRUE}
-final  <- as.Date("2019-06-01")
-
-# df <- df |>
-#   filter(between(Data, final - days(360), final)) |>
-#   mutate(Acumulado = cumsum(Chuva))
+final  <- as.Date("2019-04-01")
 ```
 
 
@@ -457,9 +453,10 @@ acumulados <- function() {
   n <- nrow(teste)
   acums <- seq(from = 30, to = 360, by = 30)
   acumulado <- rep(NA, times = n)
-  acumulado[which(teste$Período)] <- cumsum(teste$Chuva[teste$Período])
-  acumulado
+  pos <- which(teste$Período)
+  acumulado[pos[8:length(pos)]] <- cumsum(teste$Chuva[pos[8:length(pos)]])
+  pos[8:length(pos)]
 }
 
-leap_year(1200)
+seq.Date(from = min(teste$Data), to = max(teste$Data), by = "day")
 ```
