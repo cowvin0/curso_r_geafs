@@ -449,13 +449,14 @@ final  <- as.Date("2019-04-01")
 teste <- df |>
   mutate(Período = between(Data, final - days(360), final))
 
-acumulados <- function() {
-  n <- nrow(teste)
-  acums <- seq(from = 30, to = 360, by = 30)
+acumulados <- function(dados, data_final) {
+  dados <- dados  |>
+    mutate(Período = between(Data, data_final - days(360), data_final))
+  n <- nrow(dados)
   acumulado <- rep(NA, times = n)
   pos <- which(teste$Período)
   acumulado[pos[8:length(pos)]] <- cumsum(teste$Chuva[pos[8:length(pos)]])
-  pos[8:length(pos)]
+  dados
 }
 
 seq.Date(from = min(teste$Data), to = max(teste$Data), by = "day")
