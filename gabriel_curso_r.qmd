@@ -386,6 +386,8 @@ meu_dataframe3$quadrinhos <- c("Sim", "Sim", "Não")
 meu_dataframe3
 ```
 
+## Funções especiais
+
 # Tidyverse
 
 ## O que é o Tidyverse
@@ -441,7 +443,22 @@ head(df)
 ```{r eval=TRUE}
 final  <- as.Date("2019-01-01")
 
-df <- df |>
-  filter(between(Data, final - days(360), final)) |>
-  mutate(Acumulado = cumsum(Chuva))
+# df <- df |>
+#   filter(between(Data, final - days(360), final)) |>
+#   mutate(Acumulado = cumsum(Chuva))
+```
+
+
+```{r}
+teste <- df |>
+  mutate(Período = between(Data, final - days(360), final))
+
+acumulados <- function() {
+  n <- nrow(teste)
+  acumulado <- rep(NA, times = n)
+  acumulado[which(teste$Período)] <- cumsum(teste$Chuva[teste$Período])
+  acumulado
+}
+
+leap_year(1200)
 ```

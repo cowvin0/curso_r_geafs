@@ -154,6 +154,13 @@
     "text": "Combinando Data Frames\nAgora, utilizando a função rbind, podemos combinar dois data frames como se estivessemos adicionando novas variáveis ao banco de dados:\n\nmeu_dataframe3 &lt;- data.frame(\n  sobrenome = c(\"Wayne\", \"Osterman\", \"Pereira\"),\n  filme = c(\"Batman\", \"Watchman\", NA)\n)\n\ncbind(meu_dataframe, meu_dataframe3)\n\n         pessoa idade Sexo sobrenome    filme\n1         Bruce    30    M     Wayne   Batman\n2 Dr. Manhattan    43    M  Osterman Watchman\n3        Simone    45    F   Pereira     &lt;NA&gt;\n\n\nPodemos adicionar variáveis utilizando o cifrão:\n\nmeu_dataframe3$quadrinhos &lt;- c(\"Sim\", \"Sim\", \"Não\")\nmeu_dataframe3\n\n  sobrenome    filme quadrinhos\n1     Wayne   Batman        Sim\n2  Osterman Watchman        Sim\n3   Pereira     &lt;NA&gt;        Não"
   },
   {
+    "objectID": "gabriel_curso_r.html#funções-especiais",
+    "href": "gabriel_curso_r.html#funções-especiais",
+    "title": "Introdução à linguagem de programação R",
+    "section": "Funções especiais",
+    "text": "Funções especiais"
+  },
+  {
     "objectID": "gabriel_curso_r.html#o-que-é-o-tidyverse",
     "href": "gabriel_curso_r.html#o-que-é-o-tidyverse",
     "title": "Introdução à linguagem de programação R",
@@ -179,6 +186,6 @@
     "href": "gabriel_curso_r.html#calculando-os-acumulados",
     "title": "Introdução à linguagem de programação R",
     "section": "Calculando os acumulados",
-    "text": "Calculando os acumulados\n\ndf  &lt;- df |&gt;\n  select(- Dia)\n\ndf &lt;- df |&gt;\n  pivot_longer(\n    cols = starts_with(\"Chuva\"),\n    names_to = \"Dia\",\n    values_to = \"Chuva\"\n  ) |&gt;\n  mutate(Dia = as.double(str_replace(Dia, \"Chuva\", \"\"))) |&gt;\n  arrange(Data, Dia)\n\nhead(df)\n\n# A tibble: 6 × 11\n  EstacaoCodigo Data       Maxima Total DiaMaxima NumDiasDeChuva TotalAnual\n          &lt;dbl&gt; &lt;date&gt;      &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;          &lt;dbl&gt;      &lt;dbl&gt;\n1        734006 1901-01-01     26  27.4        31              2       735.\n2        734006 1901-01-01     26  27.4        31              2       735.\n3        734006 1901-01-01     26  27.4        31              2       735.\n4        734006 1901-01-01     26  27.4        31              2       735.\n5        734006 1901-01-01     26  27.4        31              2       735.\n6        734006 1901-01-01     26  27.4        31              2       735.\n# ℹ 4 more variables: Ano &lt;dbl&gt;, Mês &lt;dbl&gt;, Dia &lt;dbl&gt;, Chuva &lt;dbl&gt;\n\n\n\nfinal  &lt;- as.Date(\"2019-01-01\")\n\ndf &lt;- df |&gt;\n  filter(between(Data, final - days(360), final)) |&gt;\n  mutate(Acumulado = cumsum(Chuva))"
+    "text": "Calculando os acumulados\n\ndf  &lt;- df |&gt;\n  select(- Dia)\n\ndf &lt;- df |&gt;\n  pivot_longer(\n    cols = starts_with(\"Chuva\"),\n    names_to = \"Dia\",\n    values_to = \"Chuva\"\n  ) |&gt;\n  mutate(Dia = as.double(str_replace(Dia, \"Chuva\", \"\"))) |&gt;\n  arrange(Data, Dia)\n\nhead(df)\n\n# A tibble: 6 × 11\n  EstacaoCodigo Data       Maxima Total DiaMaxima NumDiasDeChuva TotalAnual\n          &lt;dbl&gt; &lt;date&gt;      &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;          &lt;dbl&gt;      &lt;dbl&gt;\n1        734006 1901-01-01     26  27.4        31              2       735.\n2        734006 1901-01-01     26  27.4        31              2       735.\n3        734006 1901-01-01     26  27.4        31              2       735.\n4        734006 1901-01-01     26  27.4        31              2       735.\n5        734006 1901-01-01     26  27.4        31              2       735.\n6        734006 1901-01-01     26  27.4        31              2       735.\n# ℹ 4 more variables: Ano &lt;dbl&gt;, Mês &lt;dbl&gt;, Dia &lt;dbl&gt;, Chuva &lt;dbl&gt;\n\n\n\nfinal  &lt;- as.Date(\"2019-01-01\")\n\n# df &lt;- df |&gt;\n#   filter(between(Data, final - days(360), final)) |&gt;\n#   mutate(Acumulado = cumsum(Chuva))\n\n\nteste &lt;- df |&gt;\n  mutate(Período = between(Data, final - days(360), final))\n\nacumulados &lt;- function() {\n  n &lt;- nrow(teste)\n  acumulado &lt;- rep(NA, times = n)\n  acumulado[which(teste$Período)] &lt;- cumsum(teste$Chuva[teste$Período])\n  acumulado\n}\n\nleap_year(1200)"
   }
 ]

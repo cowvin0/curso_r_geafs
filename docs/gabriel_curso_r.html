@@ -1839,6 +1839,9 @@ Levels: F M</code></pre>
 3   Pereira     &lt;NA&gt;        Não</code></pre>
 </div>
 </div>
+</section>
+<section id="funções-especiais" class="slide level2">
+<h2>Funções especiais</h2>
 </section></section>
 <section>
 <section id="tidyverse" class="title-slide slide level1 center">
@@ -1942,9 +1945,22 @@ Levels: F M</code></pre>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1"></a>final  <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="st">&quot;2019-01-01&quot;</span>)</span>
 <span id="cb78-2"><a href="#cb78-2"></a></span>
-<span id="cb78-3"><a href="#cb78-3"></a>df <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
-<span id="cb78-4"><a href="#cb78-4"></a>  <span class="fu">filter</span>(<span class="fu">between</span>(Data, final <span class="sc">-</span> <span class="fu">days</span>(<span class="dv">360</span>), final)) <span class="sc">|&gt;</span></span>
-<span id="cb78-5"><a href="#cb78-5"></a>  <span class="fu">mutate</span>(<span class="at">Acumulado =</span> <span class="fu">cumsum</span>(Chuva))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb78-3"><a href="#cb78-3"></a><span class="co"># df &lt;- df |&gt;</span></span>
+<span id="cb78-4"><a href="#cb78-4"></a><span class="co">#   filter(between(Data, final - days(360), final)) |&gt;</span></span>
+<span id="cb78-5"><a href="#cb78-5"></a><span class="co">#   mutate(Acumulado = cumsum(Chuva))</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1"></a>teste <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
+<span id="cb79-2"><a href="#cb79-2"></a>  <span class="fu">mutate</span>(Período <span class="ot">=</span> <span class="fu">between</span>(Data, final <span class="sc">-</span> <span class="fu">days</span>(<span class="dv">360</span>), final))</span>
+<span id="cb79-3"><a href="#cb79-3"></a></span>
+<span id="cb79-4"><a href="#cb79-4"></a>acumulados <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb79-5"><a href="#cb79-5"></a>  n <span class="ot">&lt;-</span> <span class="fu">nrow</span>(teste)</span>
+<span id="cb79-6"><a href="#cb79-6"></a>  acumulado <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, <span class="at">times =</span> n)</span>
+<span id="cb79-7"><a href="#cb79-7"></a>  acumulado[<span class="fu">which</span>(teste<span class="sc">$</span>Período)] <span class="ot">&lt;-</span> <span class="fu">cumsum</span>(teste<span class="sc">$</span>Chuva[teste<span class="sc">$</span>Período])</span>
+<span id="cb79-8"><a href="#cb79-8"></a>  acumulado</span>
+<span id="cb79-9"><a href="#cb79-9"></a>}</span>
+<span id="cb79-10"><a href="#cb79-10"></a></span>
+<span id="cb79-11"><a href="#cb79-11"></a><span class="fu">leap_year</span>(<span class="dv">1200</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 <div class="footer footer-default">
