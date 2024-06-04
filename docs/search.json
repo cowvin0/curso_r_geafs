@@ -32,7 +32,7 @@
     "href": "gabriel_curso_r.html#operações-de-comparação",
     "title": "Introdução à linguagem de programação R",
     "section": "Operações de comparação",
-    "text": "Operações de comparação\nOs operadores de comparação são utilizados para comparar dois valores\n\n\n\nOperadores\nNome\nExemplo\n\n\n\n\n\nIgual\nx == y\n\n\n\nNao igual\nx != y\n\n\n\nMaior que\nx &gt; y\n\n\n\nMenor que\nx &lt; y\n\n\n\nMaior ou igual que\nx &gt;= y\n\n\n\nMenor ou igual que\nx &lt;= y"
+    "text": "Operações de comparação\nOs operadores de comparação são utilizados para comparar dois valores\n\n\n\nOperadores\nNome\nExemplo\n\n\n\n\n==\nIgual\nx == y\n\n\n!=\nNão é igual\nx != y\n\n\n&gt;\nMaior que\nx &gt; y\n\n\n&lt;\nMenor que\nx &lt; y\n\n\n&gt;=\nMaior ou igual que\nx &gt;= y\n\n\n&lt;=\nMenor ou igual que\nx &lt;= y"
   },
   {
     "objectID": "gabriel_curso_r.html#operações-lógicas",
@@ -154,6 +154,27 @@
     "text": "Combinando Data Frames\nAgora, utilizando a função rbind, podemos combinar dois data frames como se estivessemos adicionando novas variáveis ao banco de dados:\n\nmeu_dataframe3 &lt;- data.frame(\n  sobrenome = c(\"Wayne\", \"Osterman\", \"Pereira\"),\n  filme = c(\"Batman\", \"Watchman\", NA)\n)\n\ncbind(meu_dataframe, meu_dataframe3)\n\n         pessoa idade Sexo sobrenome    filme\n1         Bruce    30    M     Wayne   Batman\n2 Dr. Manhattan    43    M  Osterman Watchman\n3        Simone    45    F   Pereira     &lt;NA&gt;\n\n\nPodemos adicionar variáveis utilizando o cifrão:\n\nmeu_dataframe3$quadrinhos &lt;- c(\"Sim\", \"Sim\", \"Não\")\nmeu_dataframe3\n\n  sobrenome    filme quadrinhos\n1     Wayne   Batman        Sim\n2  Osterman Watchman        Sim\n3   Pereira     &lt;NA&gt;        Não"
   },
   {
+    "objectID": "gabriel_curso_r.html#controle-de-fluxo",
+    "href": "gabriel_curso_r.html#controle-de-fluxo",
+    "title": "Introdução à linguagem de programação R",
+    "section": "Controle de fluxo",
+    "text": "Controle de fluxo"
+  },
+  {
+    "objectID": "gabriel_curso_r.html#instrução-if",
+    "href": "gabriel_curso_r.html#instrução-if",
+    "title": "Introdução à linguagem de programação R",
+    "section": "Instrução if",
+    "text": "Instrução if\nUma instrução if pode ser definida da seguinte forma:\n\n if (condição) {\n  escreva o código aqui...\n}\n\nCaso a condição seja TRUE, o código que está dentro das chaves será executado.\nVeja um exemplo:\n\na &lt;- 3\nb &lt;- 4\n\nif(a &lt;= b) {\n  a &lt;- a ^ 2\n}\na\n\n[1] 9\n\n\nComo a condição de que a &lt;= b é verdadeira, o código que está dentro das chaves é executado, elevando a ao quadrado."
+  },
+  {
+    "objectID": "gabriel_curso_r.html#funções",
+    "href": "gabriel_curso_r.html#funções",
+    "title": "Introdução à linguagem de programação R",
+    "section": "Funções",
+    "text": "Funções"
+  },
+  {
     "objectID": "gabriel_curso_r.html#funções-especiais",
     "href": "gabriel_curso_r.html#funções-especiais",
     "title": "Introdução à linguagem de programação R",
@@ -172,20 +193,41 @@
     "href": "gabriel_curso_r.html#como-importar-um-banco-de-dados",
     "title": "Introdução à linguagem de programação R",
     "section": "Como importar um banco de dados",
-    "text": "Como importar um banco de dados\nO pacote do tidyverse que serve para importação de banco de dados, é o readr. Por exemplo, podemos utilizar a função read_csv para ler um arquivo .csv. Veja um exemplo com dados de Chuva:\n\nlibrary(tidyverse)\n\n\ndf &lt;- read_csv(\"chuva.csv\")\nhead(df)\n\n# A tibble: 6 × 38\n  EstacaoCodigo Data    Maxima Total DiaMaxima NumDiasDeChuva TotalAnual Chuva01\n          &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;          &lt;dbl&gt;      &lt;dbl&gt;   &lt;dbl&gt;\n1        734006 01/06/…  182.  672.         14             24         NA    11.8\n2        734006 01/05/…   45   204.         21             21         NA     0.2\n3        734006 01/04/…   53   183.          1             24         NA    53  \n4        734006 01/03/…   55.4 240.         27             20         NA     0  \n5        734006 01/02/…   71   201.         13             NA         NA     0.4\n6        734006 01/01/…   28.4  72.6        27              8         NA     0  \n# ℹ 30 more variables: Chuva02 &lt;dbl&gt;, Chuva03 &lt;dbl&gt;, Chuva04 &lt;dbl&gt;,\n#   Chuva05 &lt;dbl&gt;, Chuva06 &lt;dbl&gt;, Chuva07 &lt;dbl&gt;, Chuva08 &lt;dbl&gt;, Chuva09 &lt;dbl&gt;,\n#   Chuva10 &lt;dbl&gt;, Chuva11 &lt;dbl&gt;, Chuva12 &lt;dbl&gt;, Chuva13 &lt;dbl&gt;, Chuva14 &lt;dbl&gt;,\n#   Chuva15 &lt;dbl&gt;, Chuva16 &lt;dbl&gt;, Chuva17 &lt;dbl&gt;, Chuva18 &lt;dbl&gt;, Chuva19 &lt;dbl&gt;,\n#   Chuva20 &lt;dbl&gt;, Chuva21 &lt;dbl&gt;, Chuva22 &lt;dbl&gt;, Chuva23 &lt;dbl&gt;, Chuva24 &lt;dbl&gt;,\n#   Chuva25 &lt;dbl&gt;, Chuva26 &lt;dbl&gt;, Chuva27 &lt;dbl&gt;, Chuva28 &lt;dbl&gt;, Chuva29 &lt;dbl&gt;,\n#   Chuva30 &lt;dbl&gt;, Chuva31 &lt;dbl&gt;"
+    "text": "Como importar um banco de dados\nO pacote do tidyverse que serve para importação de banco de dados, é o readr. Por exemplo, podemos utilizar a função read_csv para ler um arquivo .csv. Veja um exemplo com dados de Chuva:\n\nlibrary(tidyverse)\n\nCom a função head podemos ver as primeiras n linhas do banco de dados. Por padrão n = 6:\n\ndf &lt;- read_csv(\"chuva.csv\")\nhead(df)\n\n# A tibble: 6 × 38\n  EstacaoCodigo Data    Maxima Total DiaMaxima NumDiasDeChuva TotalAnual Chuva01\n          &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;          &lt;dbl&gt;      &lt;dbl&gt;   &lt;dbl&gt;\n1        734006 01/06/…  182.  672.         14             24         NA    11.8\n2        734006 01/05/…   45   204.         21             21         NA     0.2\n3        734006 01/04/…   53   183.          1             24         NA    53  \n4        734006 01/03/…   55.4 240.         27             20         NA     0  \n5        734006 01/02/…   71   201.         13             NA         NA     0.4\n6        734006 01/01/…   28.4  72.6        27              8         NA     0  \n# ℹ 30 more variables: Chuva02 &lt;dbl&gt;, Chuva03 &lt;dbl&gt;, Chuva04 &lt;dbl&gt;,\n#   Chuva05 &lt;dbl&gt;, Chuva06 &lt;dbl&gt;, Chuva07 &lt;dbl&gt;, Chuva08 &lt;dbl&gt;, Chuva09 &lt;dbl&gt;,\n#   Chuva10 &lt;dbl&gt;, Chuva11 &lt;dbl&gt;, Chuva12 &lt;dbl&gt;, Chuva13 &lt;dbl&gt;, Chuva14 &lt;dbl&gt;,\n#   Chuva15 &lt;dbl&gt;, Chuva16 &lt;dbl&gt;, Chuva17 &lt;dbl&gt;, Chuva18 &lt;dbl&gt;, Chuva19 &lt;dbl&gt;,\n#   Chuva20 &lt;dbl&gt;, Chuva21 &lt;dbl&gt;, Chuva22 &lt;dbl&gt;, Chuva23 &lt;dbl&gt;, Chuva24 &lt;dbl&gt;,\n#   Chuva25 &lt;dbl&gt;, Chuva26 &lt;dbl&gt;, Chuva27 &lt;dbl&gt;, Chuva28 &lt;dbl&gt;, Chuva29 &lt;dbl&gt;,\n#   Chuva30 &lt;dbl&gt;, Chuva31 &lt;dbl&gt;"
   },
   {
     "objectID": "gabriel_curso_r.html#lidando-com-datas",
     "href": "gabriel_curso_r.html#lidando-com-datas",
     "title": "Introdução à linguagem de programação R",
     "section": "Lidando com datas",
-    "text": "Lidando com datas\n\ndf &lt;- df |&gt;\n  mutate(\n    Data = as.Date(Data, format = \"%d/%m/%Y\"),\n    Ano = year(Data),\n    Mês = month(Data),\n    Dia = day(Data)\n    ) |&gt;\n    drop_na(Data)\nhead(df)\n\n# A tibble: 6 × 41\n  EstacaoCodigo Data       Maxima Total DiaMaxima NumDiasDeChuva TotalAnual\n          &lt;dbl&gt; &lt;date&gt;      &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;          &lt;dbl&gt;      &lt;dbl&gt;\n1        734006 2019-06-01  182.  672.         14             24         NA\n2        734006 2019-05-01   45   204.         21             21         NA\n3        734006 2019-04-01   53   183.          1             24         NA\n4        734006 2019-03-01   55.4 240.         27             20         NA\n5        734006 2019-02-01   71   201.         13             NA         NA\n6        734006 2019-01-01   28.4  72.6        27              8         NA\n# ℹ 34 more variables: Chuva01 &lt;dbl&gt;, Chuva02 &lt;dbl&gt;, Chuva03 &lt;dbl&gt;,\n#   Chuva04 &lt;dbl&gt;, Chuva05 &lt;dbl&gt;, Chuva06 &lt;dbl&gt;, Chuva07 &lt;dbl&gt;, Chuva08 &lt;dbl&gt;,\n#   Chuva09 &lt;dbl&gt;, Chuva10 &lt;dbl&gt;, Chuva11 &lt;dbl&gt;, Chuva12 &lt;dbl&gt;, Chuva13 &lt;dbl&gt;,\n#   Chuva14 &lt;dbl&gt;, Chuva15 &lt;dbl&gt;, Chuva16 &lt;dbl&gt;, Chuva17 &lt;dbl&gt;, Chuva18 &lt;dbl&gt;,\n#   Chuva19 &lt;dbl&gt;, Chuva20 &lt;dbl&gt;, Chuva21 &lt;dbl&gt;, Chuva22 &lt;dbl&gt;, Chuva23 &lt;dbl&gt;,\n#   Chuva24 &lt;dbl&gt;, Chuva25 &lt;dbl&gt;, Chuva26 &lt;dbl&gt;, Chuva27 &lt;dbl&gt;, Chuva28 &lt;dbl&gt;,\n#   Chuva29 &lt;dbl&gt;, Chuva30 &lt;dbl&gt;, Chuva31 &lt;dbl&gt;, Ano &lt;dbl&gt;, Mês &lt;dbl&gt;, …"
+    "text": "Lidando com datas\nA coluna de data não está no formato ideal para o R ler como um tipo de dado, ela está representada como um caractere. Veja pelos primeiros elementos de seu vetor:\n\nhead(df$Data)\n\n[1] \"01/06/2019\" \"01/05/2019\" \"01/04/2019\" \"01/03/2019\" \"01/02/2019\"\n[6] \"01/01/2019\"\n\n\nAssim, precisamos transformar essa coluna para o tipo data para que possamos trabalhar com ela. A função as.Date do R base serve para transformar um valor para o tipo data."
+  },
+  {
+    "objectID": "gabriel_curso_r.html#lidando-com-datas-1",
+    "href": "gabriel_curso_r.html#lidando-com-datas-1",
+    "title": "Introdução à linguagem de programação R",
+    "section": "Lidando com datas",
+    "text": "Lidando com datas\nAssim, para reescrever a coluna Data para o tipo de dados data, podemos simplesmente utilizar a função mutate do pacote dplyr. Na função as.Date passamos o formato que está a data para o argumento format. Logo, temos que o formato deve ser %d/%m/%Y, representando os dias, meses e anos:\n\ndf &lt;- df |&gt;\n  mutate(\n    Data = as.Date(Data, format = \"%d/%m/%Y\"),\n    Ano = year(Data),\n    Mês = month(Data),\n    Dia = day(Data)\n    ) |&gt;\n    drop_na(Data)\n\nhead(df)\n\n# A tibble: 6 × 41\n  EstacaoCodigo Data       Maxima Total DiaMaxima NumDiasDeChuva TotalAnual\n          &lt;dbl&gt; &lt;date&gt;      &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;          &lt;dbl&gt;      &lt;dbl&gt;\n1        734006 2019-06-01  182.  672.         14             24         NA\n2        734006 2019-05-01   45   204.         21             21         NA\n3        734006 2019-04-01   53   183.          1             24         NA\n4        734006 2019-03-01   55.4 240.         27             20         NA\n5        734006 2019-02-01   71   201.         13             NA         NA\n6        734006 2019-01-01   28.4  72.6        27              8         NA\n# ℹ 34 more variables: Chuva01 &lt;dbl&gt;, Chuva02 &lt;dbl&gt;, Chuva03 &lt;dbl&gt;,\n#   Chuva04 &lt;dbl&gt;, Chuva05 &lt;dbl&gt;, Chuva06 &lt;dbl&gt;, Chuva07 &lt;dbl&gt;, Chuva08 &lt;dbl&gt;,\n#   Chuva09 &lt;dbl&gt;, Chuva10 &lt;dbl&gt;, Chuva11 &lt;dbl&gt;, Chuva12 &lt;dbl&gt;, Chuva13 &lt;dbl&gt;,\n#   Chuva14 &lt;dbl&gt;, Chuva15 &lt;dbl&gt;, Chuva16 &lt;dbl&gt;, Chuva17 &lt;dbl&gt;, Chuva18 &lt;dbl&gt;,\n#   Chuva19 &lt;dbl&gt;, Chuva20 &lt;dbl&gt;, Chuva21 &lt;dbl&gt;, Chuva22 &lt;dbl&gt;, Chuva23 &lt;dbl&gt;,\n#   Chuva24 &lt;dbl&gt;, Chuva25 &lt;dbl&gt;, Chuva26 &lt;dbl&gt;, Chuva27 &lt;dbl&gt;, Chuva28 &lt;dbl&gt;,\n#   Chuva29 &lt;dbl&gt;, Chuva30 &lt;dbl&gt;, Chuva31 &lt;dbl&gt;, Ano &lt;dbl&gt;, Mês &lt;dbl&gt;, …"
+  },
+  {
+    "objectID": "gabriel_curso_r.html#lidando-com-datas-2",
+    "href": "gabriel_curso_r.html#lidando-com-datas-2",
+    "title": "Introdução à linguagem de programação R",
+    "section": "Lidando com datas",
+    "text": "Lidando com datas\nAgora que temos a coluna data no formato correto, podemos inserir também o ano, mês e dia como colunas do banco de dados:\nA função select serve para selecionar variáveis do banco de dados\n\ndf &lt;- df |&gt;\n  mutate(\n    Ano = year(Data),\n    Mês = month(Data),\n    Dia = day(Data)\n  )\n\ndf |&gt;\n  select(c(Ano, Mês, Dia)) |&gt;\n  head()\n\n# A tibble: 6 × 3\n    Ano   Mês   Dia\n  &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;\n1  2019     6     1\n2  2019     5     1\n3  2019     4     1\n4  2019     3     1\n5  2019     2     1\n6  2019     1     1"
   },
   {
     "objectID": "gabriel_curso_r.html#calculando-os-acumulados",
     "href": "gabriel_curso_r.html#calculando-os-acumulados",
     "title": "Introdução à linguagem de programação R",
     "section": "Calculando os acumulados",
-    "text": "Calculando os acumulados\n\ndf  &lt;- df |&gt;\n  select(- Dia)\n\ndf &lt;- df |&gt;\n  pivot_longer(\n    cols = starts_with(\"Chuva\"),\n    names_to = \"Dia\",\n    values_to = \"Chuva\"\n  ) |&gt;\n  mutate(Dia = as.double(str_replace(Dia, \"Chuva\", \"\"))) |&gt;\n  arrange(Data, Dia)\n\nhead(df)\n\n# A tibble: 6 × 11\n  EstacaoCodigo Data       Maxima Total DiaMaxima NumDiasDeChuva TotalAnual\n          &lt;dbl&gt; &lt;date&gt;      &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;          &lt;dbl&gt;      &lt;dbl&gt;\n1        734006 1901-01-01     26  27.4        31              2       735.\n2        734006 1901-01-01     26  27.4        31              2       735.\n3        734006 1901-01-01     26  27.4        31              2       735.\n4        734006 1901-01-01     26  27.4        31              2       735.\n5        734006 1901-01-01     26  27.4        31              2       735.\n6        734006 1901-01-01     26  27.4        31              2       735.\n# ℹ 4 more variables: Ano &lt;dbl&gt;, Mês &lt;dbl&gt;, Dia &lt;dbl&gt;, Chuva &lt;dbl&gt;\n\n\n\nfinal  &lt;- as.Date(\"2019-01-01\")\n\n# df &lt;- df |&gt;\n#   filter(between(Data, final - days(360), final)) |&gt;\n#   mutate(Acumulado = cumsum(Chuva))\n\n\nteste &lt;- df |&gt;\n  mutate(Período = between(Data, final - days(360), final))\n\nacumulados &lt;- function() {\n  n &lt;- nrow(teste)\n  acumulado &lt;- rep(NA, times = n)\n  acumulado[which(teste$Período)] &lt;- cumsum(teste$Chuva[teste$Período])\n  acumulado\n}\n\nleap_year(1200)"
+    "text": "Calculando os acumulados\n\ndf &lt;- df |&gt;\n  select(- Dia)\n\ndf &lt;- df |&gt;\n  pivot_longer(\n    cols = starts_with(\"Chuva\"),\n    names_to = \"Dia\",\n    values_to = \"Chuva\"\n  ) |&gt;\n  mutate(Dia = as.double(str_replace(Dia, \"Chuva\", \"\"))) |&gt;\n  arrange(Data, Dia)\n\nhead(df)\n\n# A tibble: 6 × 11\n  EstacaoCodigo Data       Maxima Total DiaMaxima NumDiasDeChuva TotalAnual\n          &lt;dbl&gt; &lt;date&gt;      &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;          &lt;dbl&gt;      &lt;dbl&gt;\n1        734006 1901-01-01     26  27.4        31              2       735.\n2        734006 1901-01-01     26  27.4        31              2       735.\n3        734006 1901-01-01     26  27.4        31              2       735.\n4        734006 1901-01-01     26  27.4        31              2       735.\n5        734006 1901-01-01     26  27.4        31              2       735.\n6        734006 1901-01-01     26  27.4        31              2       735.\n# ℹ 4 more variables: Ano &lt;dbl&gt;, Mês &lt;dbl&gt;, Dia &lt;dbl&gt;, Chuva &lt;dbl&gt;\n\n\n\nfinal  &lt;- as.Date(\"2019-04-01\")\n\n\nacumulados &lt;- function(dados, data_final) {\n  dados &lt;- dados |&gt;\n    mutate(\n      Período = between(Data, data_final - days(360), data_final)\n    )\n  acumulado &lt;- rep(NA, times = nrow(dados))\n  pos &lt;- which(dados$Período)\n  acumulado[pos[8:length(pos)]] &lt;- cumsum(teste$Chuva[pos[8:length(pos)]])\n\n  dados |&gt;\n    mutate(Acumulado = acumulado)\n}"
+  },
+  {
+    "objectID": "gabriel_curso_r.html#visualização-de-dados-com-ggplot",
+    "href": "gabriel_curso_r.html#visualização-de-dados-com-ggplot",
+    "title": "Introdução à linguagem de programação R",
+    "section": "Visualização de dados com ggplot",
+    "text": "Visualização de dados com ggplot"
   }
 ]
