@@ -91,12 +91,12 @@ Os operadores de comparação são utilizados para comparar dois valores
 
 | Operadores | Nome | Exemplo |
 |:---:|:---:|:---:|
-|  | Igual | `x == y` |
-| | Nao igual | `x != y ` |
-| | Maior que | `x > y` |
-| | Menor que | `x < y` |
-|  | Maior ou igual que | `x >= y`  |
-|  | Menor ou igual que | `x <= y ` |
+| == | Igual | `x == y` |
+| != | Não é igual | `x != y ` |
+| > | Maior que | `x > y` |
+| < | Menor que | `x < y` |
+| >= | Maior ou igual que | `x >= y`  |
+| <= | Menor ou igual que | `x <= y ` |
 
 ## Operações lógicas {.smaller}
 
@@ -455,6 +455,36 @@ meu_dataframe3$quadrinhos <- c("Sim", "Sim", "Não")
 meu_dataframe3
 ```
 
+## Controle de fluxo
+
+## Instrução if {.smaller}
+
+Uma instrução *if* pode ser definida da seguinte forma:
+
+```{r eval=FALSE}
+ if (condição) {
+  escreva o código aqui...
+}
+```
+
+Caso a condição seja TRUE, o código que está dentro das chaves será executado.
+
+Veja um exemplo:
+
+```{r eval=TRUE}
+a <- 3
+b <- 4
+
+if(a <= b) {
+  a <- a ^ 2
+}
+a
+```
+
+Como a condição de que `a <= b` é verdadeira, o código que está dentro das chaves é executado, elevando `a` ao quadrado.
+
+## Funções
+
 ## Funções especiais
 
 # Tidyverse
@@ -471,12 +501,26 @@ O pacote do tidyverse que serve para importação de banco de dados, é o `readr
 library(tidyverse)
 ```
 
+Com a função `head` podemos ver as primeiras *n* linhas do banco de dados. Por padrão n = 6:
+
 ```{r eval=TRUE}
 df <- read_csv("chuva.csv")
 head(df)
 ```
 
 ## Lidando com datas
+
+A coluna de data não está no formato ideal para o R ler como um tipo de dado, ela está representada como um caractere. Veja pelos primeiros elementos de seu vetor:
+
+```{r eval=TRUE}
+head(df$Data)
+```
+
+Assim, precisamos transformar essa coluna para o tipo data para que possamos trabalhar com ela. A função `as.Date` do *R* base serve para transformar um valor para o tipo data.
+
+## Lidando com datas {.smaller}
+
+Assim, para reescrever a coluna Data para o tipo de dados data, podemos simplesmente utilizar a função `mutate` do pacote `dplyr`. Na função `as.Date` passamos o formato que está a data para o argumento `format`. Logo, temos que o formato deve ser `%d/%m/%Y`, representando os dias, meses e anos:
 
 ```{r eval=TRUE}
 df <- df |>
@@ -487,13 +531,33 @@ df <- df |>
     Dia = day(Data)
     ) |>
     drop_na(Data)
+
 head(df)
+```
+
+## Lidando com datas {.smaller}
+
+Agora que temos a coluna data no formato correto, podemos inserir também o ano, mês e dia como colunas do banco de dados:
+
+**A função `select` serve para selecionar variáveis do banco de dados**
+
+```{r eval=TRUE}
+df <- df |>
+  mutate(
+    Ano = year(Data),
+    Mês = month(Data),
+    Dia = day(Data)
+  )
+
+df |>
+  select(c(Ano, Mês, Dia)) |>
+  head()
 ```
 
 ## Calculando os acumulados
 
 ```{r eval=TRUE}
-df  <- df |>
+df <- df |>
   select(- Dia)
 
 df <- df |>
@@ -510,25 +574,23 @@ head(df)
 
 
 ```{r eval=TRUE}
-final  <- as.Date("2019-06-01")
-
-# df <- df |>
-#   filter(between(Data, final - days(360), final)) |>
-#   mutate(Acumulado = cumsum(Chuva))
+final  <- as.Date("2019-04-01")
 ```
 
 
 ```{r}
-teste <- df |>
-  mutate(Período = between(Data, final - days(360), final))
+acumulados <- function(dados, data_final) {
+  dados <- dados |>
+    mutate(
+      Período = between(Data, data_final - days(360), data_final)
+    )
+  acumulado <- rep(NA, times = nrow(dados))
+  pos <- which(dados$Período)
+  acumulado[pos[8:length(pos)]] <- cumsum(teste$Chuva[pos[8:length(pos)]])
 
-acumulados <- function() {
-  n <- nrow(teste)
-  acums <- seq(from = 30, to = 360, by = 30)
-  acumulado <- rep(NA, times = n)
-  acumulado[which(teste$Período)] <- cumsum(teste$Chuva[teste$Período])
-  acumulado
+  dados |>
+    mutate(Acumulado = acumulado)
 }
-
-leap_year(1200)
 ```
+
+## Visualização de dados com ggplot
