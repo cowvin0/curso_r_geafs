@@ -101,12 +101,9 @@ var PdfExport = ( function( _Reveal ){
 			Reveal = _Reveal;
 			install();
 		};
-<<<<<<< HEAD
 		Plugin.togglePdfExport = function () {
       togglePdfExport();
     };
-=======
->>>>>>> refs/remotes/origin/main
 	}
 
 	return Plugin;
