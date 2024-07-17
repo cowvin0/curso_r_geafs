@@ -133,6 +133,13 @@
     "text": "Listas\nÉ possível também nomear os elementos de uma lista e acessar seus elementos pelo nome:\n\nminha_lista2 &lt;- list(\n  numero = 42,\n  texto = \"Olá, mundo!\",\n  vetor = c(1, 2, 3, 4, 5),\n  matriz = matrix(1:9, nrow = 3),\n  sublista = list(a = 10, b = 20)\n)\nminha_lista2\n\n$numero\n[1] 42\n\n$texto\n[1] \"Olá, mundo!\"\n\n$vetor\n[1] 1 2 3 4 5\n\n$matriz\n     [,1] [,2] [,3]\n[1,]    1    4    7\n[2,]    2    5    8\n[3,]    3    6    9\n\n$sublista\n$sublista$a\n[1] 10\n\n$sublista$b\n[1] 20"
   },
   {
+    "objectID": "gabriel_curso_r.html#acessando-e-modificando-nomes-de-uma-lista",
+    "href": "gabriel_curso_r.html#acessando-e-modificando-nomes-de-uma-lista",
+    "title": "Introdução à linguagem de programação R",
+    "section": "Acessando e modificando nomes de uma lista",
+    "text": "Acessando e modificando nomes de uma lista\nOs nomes de uma lista com elementos nomeados podem ser acessados utilizando a função names() e para modificar os nomes, basta passar um vetor atômico com os nomes modificados:\n\nminha_lista3 &lt;- minha_lista2\n\n# Nomes originais\n\nnames(minha_lista3)\n\n[1] \"numero\"   \"texto\"    \"vetor\"    \"matriz\"   \"sublista\"\n\nnames(minha_lista3) &lt;- c(\n  \"nome_modificado1\", \"nome_modificado2\",\n  \"nome_modificado3\", \"nome_modificado4\",\n  \"nome_modificado5\")\n\n# Nomes modificados\n\nnames(minha_lista3)\n\n[1] \"nome_modificado1\" \"nome_modificado2\" \"nome_modificado3\" \"nome_modificado4\"\n[5] \"nome_modificado5\"\n\n\nO mesmo vale para vetores atômicos nomeados. Para criar um vetor atômico nomeado basta nomear os elementos como em uma lista:\n\natomico_nomeado &lt;- c(b = \"sim\", c = \"valor2\", d = \"valor3\")\natomico_nomeado\n\n       b        c        d \n   \"sim\" \"valor2\" \"valor3\" \n\nnames(atomico_nomeado)\n\n[1] \"b\" \"c\" \"d\""
+  },
+  {
     "objectID": "gabriel_curso_r.html#acessando-elementos-de-uma-lista",
     "href": "gabriel_curso_r.html#acessando-elementos-de-uma-lista",
     "title": "Introdução à linguagem de programação R",
@@ -144,7 +151,35 @@
     "href": "gabriel_curso_r.html#acessando-elementos-de-uma-lista-1",
     "title": "Introdução à linguagem de programação R",
     "section": "Acessando elementos de uma lista",
-    "text": "Acessando elementos de uma lista\nAcessando pelo nome na lista minha_lista2:\n\nminha_lista2$vetor\n\n[1] 1 2 3 4 5\n\n\nÉ possível também acessar o elemento com os colchetes duplos:\n\nminha_lista2[[\"vetor\"]]\n\n[1] 1 2 3 4 5"
+    "text": "Acessando elementos de uma lista\nAcessando pelo nome na lista minha_lista2:\n\nminha_lista2$vetor\n\n[1] 1 2 3 4 5\n\n\nÉ possível também acessar o elemento com os colchetes duplos:\n\nminha_lista2[[\"vetor\"]]\n\n[1] 1 2 3 4 5\n\n\nAs operações lógicas para acessar elementos de um vetor atômico continua valendo para um vetor do tipo lista:\n\nminha_lista2[minha_lista2 == \"Olá, mundo!\"]\n\n$texto\n[1] \"Olá, mundo!\""
+  },
+  {
+    "objectID": "gabriel_curso_r.html#mais-funções-importantes-para-vetores",
+    "href": "gabriel_curso_r.html#mais-funções-importantes-para-vetores",
+    "title": "Introdução à linguagem de programação R",
+    "section": "Mais funções importantes para vetores",
+    "text": "Mais funções importantes para vetores\nExistem três funções importantes para vetores, a função str que permite checar a estrutura de um tipo de dado. Por exemplo, se utilizarmos numa lista, ela mostrara o tipo de dados da lista:\n\n# O primeiro valor é numérico, o segundo é caracter, o terceiro é um vetor atômico e o último é uma lista nomeada de 2 elementos\n\nstr(minha_lista2)\n\nList of 5\n $ numero  : num 42\n $ texto   : chr \"Olá, mundo!\"\n $ vetor   : num [1:5] 1 2 3 4 5\n $ matriz  : int [1:3, 1:3] 1 2 3 4 5 6 7 8 9\n $ sublista:List of 2\n  ..$ a: num 10\n  ..$ b: num 20\n\n\nOutra função importante é a is.list que serve para checar se um objeto é uma lista e retorna o valor lógico TRUE, se for verdade, e FALSE caso contrário.\n\nis.list(minha_lista2)\n\n[1] TRUE\n\n\nPor último, para transformar uma lista em um vetor atômico, podemos utilizar a função unlist():\n\nunlist(minha_lista2)"
+  },
+  {
+    "objectID": "gabriel_curso_r.html#exercícios-de-vetores",
+    "href": "gabriel_curso_r.html#exercícios-de-vetores",
+    "title": "Introdução à linguagem de programação R",
+    "section": "Exercícios de vetores",
+    "text": "Exercícios de vetores\nExercício: Construa um vetor de números pares de 2 a 100 e um outro vetor de números ímpares de números de 1 a 99. Dica: um número par é divisível por 2, ou seja, o resto da divisão seria zero. Caso contrário, o número é ímpar."
+  },
+  {
+    "objectID": "gabriel_curso_r.html#exercícios-de-vetores-1",
+    "href": "gabriel_curso_r.html#exercícios-de-vetores-1",
+    "title": "Introdução à linguagem de programação R",
+    "section": "Exercícios de vetores",
+    "text": "Exercícios de vetores\nExercício: Construa uma sequência de números no intervalo fechado [1, 100] por intervalos de comprimento 0.1. Construa uma outra sequência no intervalo fechado [1, 100] com 37 elementos. Dica: utilize a função seq(). Consulte a sua documentação com ?seq"
+  },
+  {
+    "objectID": "gabriel_curso_r.html#exercícios-de-vetores-2",
+    "href": "gabriel_curso_r.html#exercícios-de-vetores-2",
+    "title": "Introdução à linguagem de programação R",
+    "section": "Exercícios de vetores",
+    "text": "Exercícios de vetores\nExercício: Corra o código abaixo e entenda assimile as saídas.\n\nl &lt;- c(list(c(3,2),\"a\"),c(1,2))\nstr(l)\n\nList of 4\n $ : num [1:2] 3 2\n $ : chr \"a\"\n $ : num 1\n $ : num 2\n\nm &lt;- list(list(c(3,2),\"a\"),c(1,2))\nstr(m)\n\nList of 2\n $ :List of 2\n  ..$ : num [1:2] 3 2\n  ..$ : chr \"a\"\n $ : num [1:2] 1 2"
   },
   {
     "objectID": "gabriel_curso_r.html#data-frames",
@@ -158,14 +193,14 @@
     "href": "gabriel_curso_r.html#como-criar-um-data-frame",
     "title": "Introdução à linguagem de programação R",
     "section": "Como criar um Data Frame",
-    "text": "Como criar um Data Frame\nPara a criação de um Data Frame, podemos utilizar a função data.frame. Veja um exemplo:\n\nmeu_dataframe &lt;- data.frame(\n  pessoa = c(\"Bruce\", \"Dr. Manhattan\", \"Simone\"),\n  idade = c(30, 43, 45),\n  Sexo = factor(c(\"M\", \"M\", \"F\"))\n)\nmeu_dataframe\n\n         pessoa idade Sexo\n1         Bruce    30    M\n2 Dr. Manhattan    43    M\n3        Simone    45    F\n\n\nPodemos acessar os elementos da mesma forma que uma matriz:\n\nmeu_dataframe[2, 2]\n\n[1] 43\n\nmeu_dataframe[2:3, 3]\n\n[1] M F\nLevels: F M\n\nmeu_dataframe[, c(3, 1)]\n\n  Sexo        pessoa\n1    M         Bruce\n2    M Dr. Manhattan\n3    F        Simone"
+    "text": "Como criar um Data Frame\nPara a criação de um Data Frame, podemos utilizar a função data.frame. Veja um exemplo:\n\nmeu_dataframe &lt;- data.frame(\n  pessoa = c(\"Bruce\", \"Dr. Manhattan\", \"Simone\"),\n  idade = c(30, 43, 45),\n  Sexo = factor(c(\"M\", \"M\", \"F\"))\n)\nmeu_dataframe\n\n         pessoa idade Sexo\n1         Bruce    30    M\n2 Dr. Manhattan    43    M\n3        Simone    45    F\n\n\nPodemos acessar os elementos de um dataframe abrindo colchetes e passando a posição da linha pra a primeira posição e da coluna para a segunda posição [linha, coluna]:\n\n# acessa a segunda linha e segunda coluna\n\nmeu_dataframe[2, 2]\n\n[1] 43\n\n# acessa da segunda a terceira linha da terceira coluna\n\nmeu_dataframe[2:3, 3]\n\n[1] M F\nLevels: F M\n\n# acessa todas as linhas, mas apenas a coluna 3 e 1\n\nmeu_dataframe[, c(3, 1)]\n\n  Sexo        pessoa\n1    M         Bruce\n2    M Dr. Manhattan\n3    F        Simone\n\n# acessa todas as linhas, mas remove a terceira e primeira coluna e mantém todas as outras\n\nmeu_dataframe[, -c(3, 1)]\n\n[1] 30 43 45\n\n# Acessando pelo nome\n\nmeu_dataframe[, c(\"pessoa\", \"idade\")]\n\n         pessoa idade\n1         Bruce    30\n2 Dr. Manhattan    43\n3        Simone    45\n\n# Acessando elementos de uma linha com operações lógicas\n\nmeu_dataframe[meu_dataframe$idade &lt; 45,]\n\n         pessoa idade Sexo\n1         Bruce    30    M\n2 Dr. Manhattan    43    M"
   },
   {
     "objectID": "gabriel_curso_r.html#acessando-elementos-de-um-data-frame",
     "href": "gabriel_curso_r.html#acessando-elementos-de-um-data-frame",
     "title": "Introdução à linguagem de programação R",
     "section": "Acessando elementos de um Data Frame",
-    "text": "Acessando elementos de um Data Frame\nVocê também pode acessar os vetores passados para o data frame utilizando seu nome:\n\nmeu_dataframe$pessoa\n\n[1] \"Bruce\"         \"Dr. Manhattan\" \"Simone\"       \n\n\nPara saber a quantidade de dimensões, linhas e colunas um data frame tem, podemos utilizar a função dim, nrow e ncol:\n\ndim(meu_dataframe)\n\n[1] 3 3\n\nnrow(meu_dataframe)\n\n[1] 3\n\nncol(meu_dataframe)\n\n[1] 3"
+    "text": "Acessando elementos de um Data Frame\nVocê também pode acessar os vetores passados para o data frame utilizando o nome da coluna:\n\nmeu_dataframe$pessoa\n\n[1] \"Bruce\"         \"Dr. Manhattan\" \"Simone\"       \n\n\nPara saber a quantidade de dimensões, linhas e colunas um data frame tem, podemos utilizar a função dim, nrow e ncol:\n\ndim(meu_dataframe)\n\n[1] 3 3\n\nnrow(meu_dataframe)\n\n[1] 3\n\nncol(meu_dataframe)\n\n[1] 3\n\n\nPodemos também acessar o nome das colunas com a função colnames. Além disso, a modificação do nome das colunas segue o mesmo padrão de uma lista ou vetor atômico nomeado:\n\nnomeia_df &lt;- meu_dataframe\ncolnames(nomeia_df)\n\n[1] \"pessoa\" \"idade\"  \"Sexo\"  \n\ncolnames(nomeia_df) &lt;- c(\"modifica1\", \"modifica2\", \"modifica3\")\nnomeia_df\n\n      modifica1 modifica2 modifica3\n1         Bruce        30         M\n2 Dr. Manhattan        43         M\n3        Simone        45         F"
   },
   {
     "objectID": "gabriel_curso_r.html#combinando-data-frames",
@@ -182,6 +217,34 @@
     "text": "Combinando Data Frames\nAgora, utilizando a função rbind, podemos combinar dois data frames como se estivessemos adicionando novas variáveis ao banco de dados:\n\nmeu_dataframe3 &lt;- data.frame(\n  sobrenome = c(\"Wayne\", \"Osterman\", \"Pereira\"),\n  filme = c(\"Batman\", \"Watchman\", NA)\n)\n\ncbind(meu_dataframe, meu_dataframe3)\n\n         pessoa idade Sexo sobrenome    filme\n1         Bruce    30    M     Wayne   Batman\n2 Dr. Manhattan    43    M  Osterman Watchman\n3        Simone    45    F   Pereira     &lt;NA&gt;\n\n\nPodemos adicionar variáveis utilizando o cifrão:\n\nmeu_dataframe3$quadrinhos &lt;- c(\"Sim\", \"Sim\", \"Não\")\nmeu_dataframe3\n\n  sobrenome    filme quadrinhos\n1     Wayne   Batman        Sim\n2  Osterman Watchman        Sim\n3   Pereira     &lt;NA&gt;        Não"
   },
   {
+    "objectID": "gabriel_curso_r.html#checando-se-é-data-frame",
+    "href": "gabriel_curso_r.html#checando-se-é-data-frame",
+    "title": "Introdução à linguagem de programação R",
+    "section": "Checando se é data frame",
+    "text": "Checando se é data frame\nPara checar se é um objeto é da estrutura de dado do tipo dataframe, podemos utilizar a função is.data.frame. Assim como as outras funções desse tipo, ela retorná TRUE para saber se for verdade e FALSE, caso contrário:\n\nis.data.frame(meu_dataframe3)\n\n[1] TRUE"
+  },
+  {
+    "objectID": "gabriel_curso_r.html#exercícios-de-data-frame",
+    "href": "gabriel_curso_r.html#exercícios-de-data-frame",
+    "title": "Introdução à linguagem de programação R",
+    "section": "Exercícios de Data Frame",
+    "text": "Exercícios de Data Frame\nExercício: Um professor irá criar um data frame para armazenar as notas de 5 alunos de sua turma em que cada aluno poderá ter realizado no máximo 3 avaliações. Crie um data frame com duas colunas sendo a primeira com os nomes dos alunos e a segunda com as notas das avaliações."
+  },
+  {
+    "objectID": "gabriel_curso_r.html#exercícios-de-data-frame-1",
+    "href": "gabriel_curso_r.html#exercícios-de-data-frame-1",
+    "title": "Introdução à linguagem de programação R",
+    "section": "Exercícios de Data Frame",
+    "text": "Exercícios de Data Frame\nExercício: Inicialmente, crie a lista abaixo: notas &lt;- list(aluno_1 = c(7.1, 3.2, NA), aluno_2 = c(2.7, 8.8, 10.0), aluno_3 = c(0.0, NA, NA), aluno_4 = c(7.7, 8.4, 6.3), aluno_5 = c(3.6, 6.6, 8.1), aluno_6 = c(NA, NA, NA), aluno_7 = c(7.4, 7.1, 7.3), aluno_8 = c(10.0, NA, 7.0), aluno_9 = c(1.6, 3.2, 5.3), aluno_10 = c(8.8, 9.2, 8.0))\na) Crie o vetor status contendo o status dos dez alunos. Considere: A (aprovado), REP (reprovado), F (final). Dica: Considere as regras de nossa instituição.\nb): Crie o vetor alunos com os nomes dos alunos. Considere os nome fictício Aluno_1 para o primeiro aluno e de forma análoga para os demais alunos. Crie esse vetor utilizando a função paste().\nc): Construa um data frame de nome histórico com as variáveis nomes, notas e status.\nd): Com base no data frame de nome historico, construa um outro data frame com o nome aprovados com os alunos aprovados. De forma análoga para os demais status.\ne): Suponha que o professor est´a interessado em saber quais alunos foram ou tem alguma chance de assumir o status de aprovado. Construa o data frame de nome bons alunos com estes alunos.\nf): Modifique os nomes das linhas do data frame historico colocando id 1 na primeira linha e respectivamente no mesmo padr˜ao para as demais linhas.\ng): Obtenha por meio do data frame de nome historico um novo data frame (historico na) com os alunos que deixaram ao menos uma prova para repor.\nh): Apenas para os alunos que fizeram as três avaliações, obtenha uma média aritmética das avaliações. Acrescente a variável de nome media no data frame historico."
+  },
+  {
+    "objectID": "gabriel_curso_r.html#exercícios-de-data-frame-2",
+    "href": "gabriel_curso_r.html#exercícios-de-data-frame-2",
+    "title": "Introdução à linguagem de programação R",
+    "section": "Exercícios de Data Frame",
+    "text": "Exercícios de Data Frame\nExercício: Utilizando o conjunto de dados de nome state.x77 responda os itens abaixo:\nPara acessar o conjunto de dados state.x77 basta digitar state.x77, ele já vem carregado no R\n\nConstrua o data frame dados a partir de state.x77.\nObtenha um data frame de nome dados 1 com as observações de dados que possua população maior que 4246, isto é, com os estados estadunidenses que possua uma população maior que 4246 (quatro milhões duzentos e quarenta e seis mil).\nObtenha o data frame dados 2 com as observações população maior que 4246 e menores que 8 milhões, isto é, menor que 8000.\nObtenha o vetor estados c com os nomes dos estados que obedecem os critérios do item c.\nConstrua o data frame dados 3 com os estados estadunidenses com população maior que 1.5 vezes a média dos 50 estados considerados. Obtenha o vetor com o nome dos estados que obedecem essa regra.\nConstrua o data frame dados 4 com os estados estadunidenses com população maior que duas vezes a mediana dos 50 estados e que tenha uma população com expectativa de vida maior que 71.84 anos.\nObtenha o data frame dados 5 com os estados estadunidenses com renda maior que a média nacional, expectativa de vida maior que 72 anos.\nAdicione ao data frame dados duas linhas com a média de todas as variáveis e variâncias, respectivamente."
+  },
+  {
     "objectID": "gabriel_curso_r.html#controle-de-fluxo",
     "href": "gabriel_curso_r.html#controle-de-fluxo",
     "title": "Introdução à linguagem de programação R",
@@ -193,7 +256,7 @@
     "href": "gabriel_curso_r.html#instrução-if",
     "title": "Introdução à linguagem de programação R",
     "section": "Instrução if",
-    "text": "Instrução if\nUma instrução if pode ser definida da seguinte forma:\n\n if (condição) {\n  escreva o código aqui...\n}\n\nCaso a condição seja TRUE, o código que está dentro das chaves será executado.\nVeja um exemplo:\n\na &lt;- 3\nb &lt;- 4\n\nif(a &lt;= b) {\n  a &lt;- a ^ 2\n}\na\n\n[1] 9\n\n\nComo a condição de que a &lt;= b é verdadeira, o código que está dentro das chaves é executado, elevando a ao quadrado."
+    "text": "Instrução if\nUma instrução if pode ser definida da seguinte forma:\n\n if (condição) {\n  escreva o código aqui...\n}\n\nCaso a condição seja TRUE, o código que está dentro das chaves será executado.\nVeja um exemplo:\n\na &lt;- 3\nb &lt;- 4\n\nif(a &lt;= b) {\n  a &lt;- a ^ 2\n}\na\n\n[1] 9\n\n\nComo a condição de que a &lt;= b é verdadeira, o código que está dentro das chaves é executado, elevando a ao quadrado.P"
   },
   {
     "objectID": "gabriel_curso_r.html#funções",
