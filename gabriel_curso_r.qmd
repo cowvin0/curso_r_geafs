@@ -412,7 +412,7 @@ if(a <= b) {
 a
 ```
 
-Como a condição de que `a <= b` é verdadeira, o código que está dentro das chaves é executado, elevando `a` ao quadrado.
+Como a condição de que `a <= b` é verdadeira, o código que está dentro das chaves é executado, elevando `a` ao quadrado.P
 
 ## Funções
 
