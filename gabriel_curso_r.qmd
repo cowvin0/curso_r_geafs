@@ -172,10 +172,27 @@ meu_vetor2 <- c(3, -3, 2, 3.45, 1e+03, 64^0.5, 2+(3-1.1)/9.44, valorqualquer)
 meu_vetor2
 ```
 
+Para criar um vetor atômico de inteiros, basta utilizar o sufixo L. Além disso, podemos criar também um vetor lógico ou de sequência de caracteres:
+
+```{r}
+meu_vetor_inteiro <- c(1L, 6L, 10L)
+meu_vetor_de_caracter <- c("string", "outra_string2")
+meu_vetor_logico <- c(TRUE, FALSE, T, F)
+```
+
 Você pode também juntar vetores:
 
 ```{r eval=TRUE}
 vetores_juntos <- c(meu_vetor, meu_vetor2)
+```
+
+## Como criar um vetor atômico
+
+`Importante: Note que atribuições da forma objeto <- valor faz com que objeto seja um vetor de uma única posição.`
+
+```{r eval=TRUE}
+a <- 7L
+a[1]
 ```
 
 ## Extraindo valores de um vetor atômico {.smaller}
@@ -252,6 +269,57 @@ meu_vetor2[2:4] <- c("Paulo", "Ataline", "Gabriel")
 meu_vetor2
 ```
 
+## Funções importantes para vetores {.smaller}
+
+As funções a seguir servem para checar o tipo de dados de um vetor e retorna TRUE se for verdade ou FALSE, caso contrário. A única função que não testa o tipo de dados mas sim a estrutura de dados é a função is.atomic(), que serve para testar se é um vetor atômico.
+
+**Ex:** is.character(). Checa se é um vetor de caracteres;
+
+**Ex:** is.double(). Checa se é um vetor de números reais;
+
+**Ex:** is.integer(). Checa se é um vetor de inteiros;
+
+**Ex:** is.logical(). Checa se é um vetor de valores lógicos;
+
+**Ex:** is.atomic(). Checa se é um vetor atômico
+
+## Funções para conversão de tipo de vetores {.smaller}
+
+Existem funções para mudar o tipo de dados dos vetores. Por exemplo, se tivermos um vetor y do tipo double, podemos converter ele para o tipo caracter com a função as.character():
+
+```{r eval=TRUE}
+y <- c(1.2, 1.4, 1.5)
+as.character(y)
+```
+
+De forma similar, podemos converter o para double, lógico ou inteiro da seguinte forma:
+
+```{r eval=TRUE}
+as.integer(y)
+as.logical(y)
+as.double(y)
+```
+
+## Funções matemáticas e estatísticas para vetores {.smaller}
+
+| Função em R | Finalidade |
+|:---:|:---:|
+| sum(x) | Retorna a soma do vetor x |
+| mean(x) | Retorna a média do vetor x |
+| median(x) | Retorna a mediana do vetor x |
+| abs(x) | Retorna o vetor com os valores absolutos |
+| sqrt(x) | Retorna o vetor com as raizes quadradas |
+| sort(x) | Retorna o vetor x ordenado de forma crescente |
+| sort(x, decreasing = TRUE) | Retorna o vetor x ordenado de forma decrescente |
+| exp(x) | Retorna o vetor exponencial |
+| log(x) | Retorna o vetor logaritmo natural |
+| log(x, base = 10) | Retorna o vetor com o logaritmo na base 10 |
+| sin(x), cos(x), tan(x) | Retorna o vator com resultados trigonométricos |
+| length(x) | Cardinalidade do vetor x |
+| factorial(x) | Fatorial dos elementos de x |
+| choose(3, 2) | Combinacao tres, dois a dois |
+| summary(x) | Medidas descritivas do vetor x |
+
 ## Listas {.smaller}
 
 As listas são semelhantes aos vetores atômicos, com a diferença de que podem conter elementos de diferentes tipos e estruturas de dados:
@@ -294,7 +362,6 @@ minha_lista[[1]]
 minha_lista[1:3]
 ```
 
-
 ## Acessando elementos de uma lista
 
 Acessando pelo nome na lista `minha_lista2`:
@@ -308,6 +375,8 @@ minha_lista2$vetor
 ```{r eval=TRUE}
 minha_lista2[["vetor"]]
 ```
+
+
 
 ## Data Frames
 
