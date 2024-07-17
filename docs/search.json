@@ -60,7 +60,14 @@
     "href": "gabriel_curso_r.html#como-criar-um-vetor-atômico",
     "title": "Introdução à linguagem de programação R",
     "section": "Como criar um vetor atômico",
-    "text": "Como criar um vetor atômico\nOs vetores atômicos podem ser criados utilizando a função c(). Por exemplo, você pode criar um objeto chamado meu vetor que tem como atributo um vetor atômico:\n\nmeu_vetor &lt;- c(1, 3, 1, 42)\nmeu_vetor\n\n[1]  1  3  1 42\n\n\nVetores atômico podem ser cálculos ou diferentes valores atribuídos a objetos, incluindo vetores atômicos:\n\nvalorqualquer &lt;- 5\nmeu_vetor2 &lt;- c(3, -3, 2, 3.45, 1e+03, 64^0.5, 2+(3-1.1)/9.44, valorqualquer)\nmeu_vetor2\n\n[1]    3.000000   -3.000000    2.000000    3.450000 1000.000000    8.000000\n[7]    2.201271    5.000000\n\n\nVocê pode também juntar vetores:\n\nvetores_juntos &lt;- c(meu_vetor, meu_vetor2)"
+    "text": "Como criar um vetor atômico\nOs vetores atômicos podem ser criados utilizando a função c(). Por exemplo, você pode criar um objeto chamado meu vetor que tem como atributo um vetor atômico:\n\nmeu_vetor &lt;- c(1, 3, 1, 42)\nmeu_vetor\n\n[1]  1  3  1 42\n\n\nVetores atômico podem ser cálculos ou diferentes valores atribuídos a objetos, incluindo vetores atômicos:\n\nvalorqualquer &lt;- 5\nmeu_vetor2 &lt;- c(3, -3, 2, 3.45, 1e+03, 64^0.5, 2+(3-1.1)/9.44, valorqualquer)\nmeu_vetor2\n\n[1]    3.000000   -3.000000    2.000000    3.450000 1000.000000    8.000000\n[7]    2.201271    5.000000\n\n\nPara criar um vetor atômico de inteiros, basta utilizar o sufixo L. Além disso, podemos criar também um vetor lógico ou de sequência de caracteres:\n\nmeu_vetor_inteiro &lt;- c(1L, 6L, 10L)\nmeu_vetor_de_caracter &lt;- c(\"string\", \"outra_string2\")\nmeu_vetor_logico &lt;- c(TRUE, FALSE, T, F)\n\nVocê pode também juntar vetores:\n\nvetores_juntos &lt;- c(meu_vetor, meu_vetor2)"
+  },
+  {
+    "objectID": "gabriel_curso_r.html#como-criar-um-vetor-atômico-1",
+    "href": "gabriel_curso_r.html#como-criar-um-vetor-atômico-1",
+    "title": "Introdução à linguagem de programação R",
+    "section": "Como criar um vetor atômico",
+    "text": "Como criar um vetor atômico\nImportante: Note que atribuições da forma objeto &lt;- valor faz com que objeto seja um vetor de uma única posição.\n\na &lt;- 7L\na[1]\n\n[1] 7"
   },
   {
     "objectID": "gabriel_curso_r.html#extraindo-valores-de-um-vetor-atômico",
@@ -89,6 +96,27 @@
     "title": "Introdução à linguagem de programação R",
     "section": "Substituindo elementos de vetores atômicos",
     "text": "Substituindo elementos de vetores atômicos\nÉ possível também substituir os elementos de um vetor atômico utilizando a sua posição. Veja um exemplo:\n\n# reescrevendo o segundo elemento de `meu_vetor2` por um caracter\n\nmeu_vetor2[2]  &lt;- \"Gabriel\"\nmeu_vetor2\n\n[1] \"3\"                \"Gabriel\"          \"2\"                \"3.45\"            \n[5] \"1000\"             \"8\"                \"2.20127118644068\" \"5\"               \n\n\nPerceba que agora que todos os elementos do vetor convergem para caracter. É possível perceber isso pelas \".\nSubstituindo do segundo ao quarto valor:\n\nmeu_vetor2[2:4] &lt;- c(\"Paulo\", \"Ataline\", \"Gabriel\")\nmeu_vetor2\n\n[1] \"3\"                \"Paulo\"            \"Ataline\"          \"Gabriel\"         \n[5] \"1000\"             \"8\"                \"2.20127118644068\" \"5\""
+  },
+  {
+    "objectID": "gabriel_curso_r.html#funções-importantes-para-vetores",
+    "href": "gabriel_curso_r.html#funções-importantes-para-vetores",
+    "title": "Introdução à linguagem de programação R",
+    "section": "Funções importantes para vetores",
+    "text": "Funções importantes para vetores\nAs funções a seguir servem para checar o tipo de dados de um vetor e retorna TRUE se for verdade ou FALSE, caso contrário. A única função que não testa o tipo de dados mas sim a estrutura de dados é a função is.atomic(), que serve para testar se é um vetor atômico.\nEx: is.character(). Checa se é um vetor de caracteres;\nEx: is.double(). Checa se é um vetor de números reais;\nEx: is.integer(). Checa se é um vetor de inteiros;\nEx: is.logical(). Checa se é um vetor de valores lógicos;\nEx: is.atomic(). Checa se é um vetor atômico"
+  },
+  {
+    "objectID": "gabriel_curso_r.html#funções-para-conversão-de-tipo-de-vetores",
+    "href": "gabriel_curso_r.html#funções-para-conversão-de-tipo-de-vetores",
+    "title": "Introdução à linguagem de programação R",
+    "section": "Funções para conversão de tipo de vetores",
+    "text": "Funções para conversão de tipo de vetores\nExistem funções para mudar o tipo de dados dos vetores. Por exemplo, se tivermos um vetor y do tipo double, podemos converter ele para o tipo caracter com a função as.character():\n\ny &lt;- c(1.2, 1.4, 1.5)\nas.character(y)\n\n[1] \"1.2\" \"1.4\" \"1.5\"\n\n\nDe forma similar, podemos converter o para double, lógico ou inteiro da seguinte forma:\n\nas.integer(y)\n\n[1] 1 1 1\n\nas.logical(y)\n\n[1] TRUE TRUE TRUE\n\nas.double(y)\n\n[1] 1.2 1.4 1.5"
+  },
+  {
+    "objectID": "gabriel_curso_r.html#funções-matemáticas-e-estatísticas-para-vetores",
+    "href": "gabriel_curso_r.html#funções-matemáticas-e-estatísticas-para-vetores",
+    "title": "Introdução à linguagem de programação R",
+    "section": "Funções matemáticas e estatísticas para vetores",
+    "text": "Funções matemáticas e estatísticas para vetores\n\n\n\n\n\n\n\nFunção em R\nFinalidade\n\n\n\n\nsum(x)\nRetorna a soma do vetor x\n\n\nmean(x)\nRetorna a média do vetor x\n\n\nmedian(x)\nRetorna a mediana do vetor x\n\n\nabs(x)\nRetorna o vetor com os valores absolutos\n\n\nsqrt(x)\nRetorna o vetor com as raizes quadradas\n\n\nsort(x)\nRetorna o vetor x ordenado de forma crescente\n\n\nsort(x, decreasing = TRUE)\nRetorna o vetor x ordenado de forma decrescente\n\n\nexp(x)\nRetorna o vetor exponencial\n\n\nlog(x)\nRetorna o vetor logaritmo natural\n\n\nlog(x, base = 10)\nRetorna o vetor com o logaritmo na base 10\n\n\nsin(x), cos(x), tan(x)\nRetorna o vator com resultados trigonométricos\n\n\nlength(x)\nCardinalidade do vetor x\n\n\nfactorial(x)\nFatorial dos elementos de x\n\n\nchoose(3, 2)\nCombinacao tres, dois a dois\n\n\nsummary(x)\nMedidas descritivas do vetor x"
   },
   {
     "objectID": "gabriel_curso_r.html#listas",
