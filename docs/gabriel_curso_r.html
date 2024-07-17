@@ -2163,202 +2163,291 @@ Levels: F M</code></pre>
 <li><p>Obtenha o data frame dados 5 com os estados estadunidenses com renda maior que a média nacional, expectativa de vida maior que 72 anos.</p></li>
 <li><p>Adicione ao data frame dados duas linhas com a média de todas as variáveis e variâncias, respectivamente.</p></li>
 </ol>
-</section>
-<section id="controle-de-fluxo" class="slide level2">
-<h2>Controle de fluxo</h2>
-</section>
-<section id="instrução-if" class="slide level2 smaller">
-<h2>Instrução if</h2>
-<p>Uma instrução <em>if</em> pode ser definida da seguinte forma:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb113"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb113-1"><a></a> <span class="cf">if</span> (condição) {</span>
-<span id="cb113-2"><a></a>  escreva o código aqui...</span>
-<span id="cb113-3"><a></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Caso a condição seja TRUE, o código que está dentro das chaves será executado.</p>
-<p>Veja um exemplo:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb114"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a></a>a <span class="ot">&lt;-</span> <span class="dv">3</span></span>
-<span id="cb114-2"><a></a>b <span class="ot">&lt;-</span> <span class="dv">4</span></span>
-<span id="cb114-3"><a></a></span>
-<span id="cb114-4"><a></a><span class="cf">if</span>(a <span class="sc">&lt;=</span> b) {</span>
-<span id="cb114-5"><a></a>  a <span class="ot">&lt;-</span> a <span class="sc">^</span> <span class="dv">2</span></span>
-<span id="cb114-6"><a></a>}</span>
-<span id="cb114-7"><a></a>a</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 9</code></pre>
-</div>
-</div>
-<p>Como a condição de que <code>a &lt;= b</code> é verdadeira, o código que está dentro das chaves é executado, elevando <code>a</code> ao quadrado.P</p>
-</section>
-<section id="funções" class="slide level2">
-<h2>Funções</h2>
-</section>
-<section id="funções-especiais" class="slide level2">
-<h2>Funções especiais</h2>
-</section></section>
-<section>
-<section id="tidyverse" class="title-slide slide level1 center">
-<h1>Tidyverse</h1>
+<!-- ## Controle de fluxo
 
-</section>
-<section id="o-que-é-o-tidyverse" class="slide level2">
-<h2>O que é o Tidyverse</h2>
-<p>O tidyverse é uma coleção de pacotes que facilita os processos básicos de um projeto ou análise de ciência de dados. Além disso, os pacotes que o compõe possuem uma sintaxe comum, o que torna a aplicação de métodos de análise de dados mais consistente e intuitiva. O tidyverse inclui pacotes para visualização, limpeza de dados, manipulação de datas, importação de dados e manipulação de strings.</p>
-</section>
-<section id="como-importar-um-banco-de-dados" class="slide level2 smaller">
-<h2>Como importar um banco de dados</h2>
-<p>O pacote do tidyverse que serve para importação de banco de dados, é o <code>readr</code>. Por exemplo, podemos utilizar a função <code>read_csv</code> para ler um arquivo <code>.csv</code>. Veja um exemplo com dados de Chuva:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb116"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Com a função <code>head</code> podemos ver as primeiras <em>n</em> linhas do banco de dados. Por padrão n = 6:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb117"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb117-1"><a></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;chuva.csv&quot;</span>)</span>
-<span id="cb117-2"><a></a><span class="fu">head</span>(df)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 38
+## Instrução if {.smaller}
+
+Uma instrução *if* pode ser definida da seguinte forma:
+
+
+::: {.cell}
+
+```{.r .cell-code}
+ if (condição) {
+  escreva o código aqui...
+}
+```
+:::
+
+
+Caso a condição seja TRUE, o código que está dentro das chaves será executado.
+
+Veja um exemplo:
+
+
+::: {.cell}
+
+```{.r .cell-code}
+a <- 3
+b <- 4
+
+if(a <= b) {
+  a <- a ^ 2
+}
+a
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] 9
+```
+
+
+:::
+:::
+
+
+Como a condição de que `a <= b` é verdadeira, o código que está dentro das chaves é executado, elevando `a` ao quadrado.P
+
+## Funções
+
+## Funções especiais
+
+# Tidyverse
+
+## O que é o Tidyverse
+
+O tidyverse é uma coleção de pacotes que facilita os processos básicos de um projeto ou análise de ciência de dados. Além disso, os pacotes que o compõe possuem uma sintaxe comum, o que torna a aplicação de métodos de análise de dados mais consistente e intuitiva. O tidyverse inclui pacotes para visualização, limpeza de dados, manipulação de datas, importação de dados e manipulação de strings.
+
+## Como importar um banco de dados {.smaller}
+
+O pacote do tidyverse que serve para importação de banco de dados, é o `readr`. Por exemplo, podemos utilizar a função `read_csv` para ler um arquivo `.csv`. Veja um exemplo com dados de Chuva:
+
+
+::: {.cell}
+
+```{.r .cell-code}
+library(tidyverse)
+```
+:::
+
+
+Com a função `head` podemos ver as primeiras *n* linhas do banco de dados. Por padrão n = 6:
+
+
+::: {.cell}
+
+```{.r .cell-code}
+df <- read_csv("chuva.csv")
+head(df)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+# A tibble: 6 × 38
   EstacaoCodigo Data    Maxima Total DiaMaxima NumDiasDeChuva TotalAnual Chuva01
-          &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;          &lt;dbl&gt;      &lt;dbl&gt;   &lt;dbl&gt;
+          <dbl> <chr>    <dbl> <dbl>     <dbl>          <dbl>      <dbl>   <dbl>
 1        734006 01/06/…  182.  672.         14             24         NA    11.8
 2        734006 01/05/…   45   204.         21             21         NA     0.2
 3        734006 01/04/…   53   183.          1             24         NA    53  
 4        734006 01/03/…   55.4 240.         27             20         NA     0  
 5        734006 01/02/…   71   201.         13             NA         NA     0.4
 6        734006 01/01/…   28.4  72.6        27              8         NA     0  
-# ℹ 30 more variables: Chuva02 &lt;dbl&gt;, Chuva03 &lt;dbl&gt;, Chuva04 &lt;dbl&gt;,
-#   Chuva05 &lt;dbl&gt;, Chuva06 &lt;dbl&gt;, Chuva07 &lt;dbl&gt;, Chuva08 &lt;dbl&gt;, Chuva09 &lt;dbl&gt;,
-#   Chuva10 &lt;dbl&gt;, Chuva11 &lt;dbl&gt;, Chuva12 &lt;dbl&gt;, Chuva13 &lt;dbl&gt;, Chuva14 &lt;dbl&gt;,
-#   Chuva15 &lt;dbl&gt;, Chuva16 &lt;dbl&gt;, Chuva17 &lt;dbl&gt;, Chuva18 &lt;dbl&gt;, Chuva19 &lt;dbl&gt;,
-#   Chuva20 &lt;dbl&gt;, Chuva21 &lt;dbl&gt;, Chuva22 &lt;dbl&gt;, Chuva23 &lt;dbl&gt;, Chuva24 &lt;dbl&gt;,
-#   Chuva25 &lt;dbl&gt;, Chuva26 &lt;dbl&gt;, Chuva27 &lt;dbl&gt;, Chuva28 &lt;dbl&gt;, Chuva29 &lt;dbl&gt;,
-#   Chuva30 &lt;dbl&gt;, Chuva31 &lt;dbl&gt;</code></pre>
-</div>
-</div>
-</section>
-<section id="lidando-com-datas" class="slide level2">
-<h2>Lidando com datas</h2>
-<p>A coluna de data não está no formato ideal para o R ler como um tipo de dado, ela está representada como um caractere. Veja pelos primeiros elementos de seu vetor:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb119"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb119-1"><a></a><span class="fu">head</span>(df<span class="sc">$</span>Data)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] &quot;01/06/2019&quot; &quot;01/05/2019&quot; &quot;01/04/2019&quot; &quot;01/03/2019&quot; &quot;01/02/2019&quot;
-[6] &quot;01/01/2019&quot;</code></pre>
-</div>
-</div>
-<p>Assim, precisamos transformar essa coluna para o tipo data para que possamos trabalhar com ela. A função <code>as.Date</code> do <em>R</em> base serve para transformar um valor para o tipo data.</p>
-</section>
-<section id="lidando-com-datas-1" class="slide level2 smaller">
-<h2>Lidando com datas</h2>
-<p>Assim, para reescrever a coluna Data para o tipo de dados data, podemos simplesmente utilizar a função <code>mutate</code> do pacote <code>dplyr</code>. Na função <code>as.Date</code> passamos o formato que está a data para o argumento <code>format</code>. Logo, temos que o formato deve ser <code>%d/%m/%Y</code>, representando os dias, meses e anos:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb121"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb121-1"><a></a>df <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
-<span id="cb121-2"><a></a>  <span class="fu">mutate</span>(</span>
-<span id="cb121-3"><a></a>    <span class="at">Data =</span> <span class="fu">as.Date</span>(Data, <span class="at">format =</span> <span class="st">&quot;%d/%m/%Y&quot;</span>),</span>
-<span id="cb121-4"><a></a>    <span class="at">Ano =</span> <span class="fu">year</span>(Data),</span>
-<span id="cb121-5"><a></a>    Mês <span class="ot">=</span> <span class="fu">month</span>(Data),</span>
-<span id="cb121-6"><a></a>    <span class="at">Dia =</span> <span class="fu">day</span>(Data)</span>
-<span id="cb121-7"><a></a>    ) <span class="sc">|&gt;</span></span>
-<span id="cb121-8"><a></a>    <span class="fu">drop_na</span>(Data)</span>
-<span id="cb121-9"><a></a></span>
-<span id="cb121-10"><a></a><span class="fu">head</span>(df)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 41
+# ℹ 30 more variables: Chuva02 <dbl>, Chuva03 <dbl>, Chuva04 <dbl>,
+#   Chuva05 <dbl>, Chuva06 <dbl>, Chuva07 <dbl>, Chuva08 <dbl>, Chuva09 <dbl>,
+#   Chuva10 <dbl>, Chuva11 <dbl>, Chuva12 <dbl>, Chuva13 <dbl>, Chuva14 <dbl>,
+#   Chuva15 <dbl>, Chuva16 <dbl>, Chuva17 <dbl>, Chuva18 <dbl>, Chuva19 <dbl>,
+#   Chuva20 <dbl>, Chuva21 <dbl>, Chuva22 <dbl>, Chuva23 <dbl>, Chuva24 <dbl>,
+#   Chuva25 <dbl>, Chuva26 <dbl>, Chuva27 <dbl>, Chuva28 <dbl>, Chuva29 <dbl>,
+#   Chuva30 <dbl>, Chuva31 <dbl>
+```
+
+
+:::
+:::
+
+
+## Lidando com datas
+
+A coluna de data não está no formato ideal para o R ler como um tipo de dado, ela está representada como um caractere. Veja pelos primeiros elementos de seu vetor:
+
+
+::: {.cell}
+
+```{.r .cell-code}
+head(df$Data)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+[1] "01/06/2019" "01/05/2019" "01/04/2019" "01/03/2019" "01/02/2019"
+[6] "01/01/2019"
+```
+
+
+:::
+:::
+
+
+Assim, precisamos transformar essa coluna para o tipo data para que possamos trabalhar com ela. A função `as.Date` do *R* base serve para transformar um valor para o tipo data.
+
+## Lidando com datas {.smaller}
+
+Assim, para reescrever a coluna Data para o tipo de dados data, podemos simplesmente utilizar a função `mutate` do pacote `dplyr`. Na função `as.Date` passamos o formato que está a data para o argumento `format`. Logo, temos que o formato deve ser `%d/%m/%Y`, representando os dias, meses e anos:
+
+
+::: {.cell}
+
+```{.r .cell-code}
+df <- df |>
+  mutate(
+    Data = as.Date(Data, format = "%d/%m/%Y"),
+    Ano = year(Data),
+    Mês = month(Data),
+    Dia = day(Data)
+    ) |>
+    drop_na(Data)
+
+head(df)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+# A tibble: 6 × 41
   EstacaoCodigo Data       Maxima Total DiaMaxima NumDiasDeChuva TotalAnual
-          &lt;dbl&gt; &lt;date&gt;      &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;          &lt;dbl&gt;      &lt;dbl&gt;
+          <dbl> <date>      <dbl> <dbl>     <dbl>          <dbl>      <dbl>
 1        734006 2019-06-01  182.  672.         14             24         NA
 2        734006 2019-05-01   45   204.         21             21         NA
 3        734006 2019-04-01   53   183.          1             24         NA
 4        734006 2019-03-01   55.4 240.         27             20         NA
 5        734006 2019-02-01   71   201.         13             NA         NA
 6        734006 2019-01-01   28.4  72.6        27              8         NA
-# ℹ 34 more variables: Chuva01 &lt;dbl&gt;, Chuva02 &lt;dbl&gt;, Chuva03 &lt;dbl&gt;,
-#   Chuva04 &lt;dbl&gt;, Chuva05 &lt;dbl&gt;, Chuva06 &lt;dbl&gt;, Chuva07 &lt;dbl&gt;, Chuva08 &lt;dbl&gt;,
-#   Chuva09 &lt;dbl&gt;, Chuva10 &lt;dbl&gt;, Chuva11 &lt;dbl&gt;, Chuva12 &lt;dbl&gt;, Chuva13 &lt;dbl&gt;,
-#   Chuva14 &lt;dbl&gt;, Chuva15 &lt;dbl&gt;, Chuva16 &lt;dbl&gt;, Chuva17 &lt;dbl&gt;, Chuva18 &lt;dbl&gt;,
-#   Chuva19 &lt;dbl&gt;, Chuva20 &lt;dbl&gt;, Chuva21 &lt;dbl&gt;, Chuva22 &lt;dbl&gt;, Chuva23 &lt;dbl&gt;,
-#   Chuva24 &lt;dbl&gt;, Chuva25 &lt;dbl&gt;, Chuva26 &lt;dbl&gt;, Chuva27 &lt;dbl&gt;, Chuva28 &lt;dbl&gt;,
-#   Chuva29 &lt;dbl&gt;, Chuva30 &lt;dbl&gt;, Chuva31 &lt;dbl&gt;, Ano &lt;dbl&gt;, Mês &lt;dbl&gt;, …</code></pre>
-</div>
-</div>
-</section>
-<section id="lidando-com-datas-2" class="slide level2 smaller">
-<h2>Lidando com datas</h2>
-<p>Agora que temos a coluna data no formato correto, podemos inserir também o ano, mês e dia como colunas do banco de dados:</p>
-<p><strong>A função <code>select</code> serve para selecionar variáveis do banco de dados</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb123"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb123-1"><a></a>df <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
-<span id="cb123-2"><a></a>  <span class="fu">mutate</span>(</span>
-<span id="cb123-3"><a></a>    <span class="at">Ano =</span> <span class="fu">year</span>(Data),</span>
-<span id="cb123-4"><a></a>    Mês <span class="ot">=</span> <span class="fu">month</span>(Data),</span>
-<span id="cb123-5"><a></a>    <span class="at">Dia =</span> <span class="fu">day</span>(Data)</span>
-<span id="cb123-6"><a></a>  )</span>
-<span id="cb123-7"><a></a></span>
-<span id="cb123-8"><a></a>df <span class="sc">|&gt;</span></span>
-<span id="cb123-9"><a></a>  <span class="fu">select</span>(<span class="fu">c</span>(Ano, Mês, Dia)) <span class="sc">|&gt;</span></span>
-<span id="cb123-10"><a></a>  <span class="fu">head</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 3
+# ℹ 34 more variables: Chuva01 <dbl>, Chuva02 <dbl>, Chuva03 <dbl>,
+#   Chuva04 <dbl>, Chuva05 <dbl>, Chuva06 <dbl>, Chuva07 <dbl>, Chuva08 <dbl>,
+#   Chuva09 <dbl>, Chuva10 <dbl>, Chuva11 <dbl>, Chuva12 <dbl>, Chuva13 <dbl>,
+#   Chuva14 <dbl>, Chuva15 <dbl>, Chuva16 <dbl>, Chuva17 <dbl>, Chuva18 <dbl>,
+#   Chuva19 <dbl>, Chuva20 <dbl>, Chuva21 <dbl>, Chuva22 <dbl>, Chuva23 <dbl>,
+#   Chuva24 <dbl>, Chuva25 <dbl>, Chuva26 <dbl>, Chuva27 <dbl>, Chuva28 <dbl>,
+#   Chuva29 <dbl>, Chuva30 <dbl>, Chuva31 <dbl>, Ano <dbl>, Mês <dbl>, …
+```
+
+
+:::
+:::
+
+
+## Lidando com datas {.smaller}
+
+Agora que temos a coluna data no formato correto, podemos inserir também o ano, mês e dia como colunas do banco de dados:
+
+**A função `select` serve para selecionar variáveis do banco de dados**
+
+
+::: {.cell}
+
+```{.r .cell-code}
+df <- df |>
+  mutate(
+    Ano = year(Data),
+    Mês = month(Data),
+    Dia = day(Data)
+  )
+
+df |>
+  select(c(Ano, Mês, Dia)) |>
+  head()
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+# A tibble: 6 × 3
     Ano   Mês   Dia
-  &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;
+  <dbl> <dbl> <int>
 1  2019     6     1
 2  2019     5     1
 3  2019     4     1
 4  2019     3     1
 5  2019     2     1
-6  2019     1     1</code></pre>
-</div>
-</div>
-</section>
-<section id="calculando-os-acumulados" class="slide level2">
-<h2>Calculando os acumulados</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb125"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb125-1"><a></a>df <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
-<span id="cb125-2"><a></a>  <span class="fu">select</span>(<span class="sc">-</span> Dia)</span>
-<span id="cb125-3"><a></a></span>
-<span id="cb125-4"><a></a>df <span class="ot">&lt;-</span> df <span class="sc">|&gt;</span></span>
-<span id="cb125-5"><a></a>  <span class="fu">pivot_longer</span>(</span>
-<span id="cb125-6"><a></a>    <span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">&quot;Chuva&quot;</span>),</span>
-<span id="cb125-7"><a></a>    <span class="at">names_to =</span> <span class="st">&quot;Dia&quot;</span>,</span>
-<span id="cb125-8"><a></a>    <span class="at">values_to =</span> <span class="st">&quot;Chuva&quot;</span></span>
-<span id="cb125-9"><a></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb125-10"><a></a>  <span class="fu">mutate</span>(<span class="at">Dia =</span> <span class="fu">as.double</span>(<span class="fu">str_replace</span>(Dia, <span class="st">&quot;Chuva&quot;</span>, <span class="st">&quot;&quot;</span>))) <span class="sc">|&gt;</span></span>
-<span id="cb125-11"><a></a>  <span class="fu">arrange</span>(Data, Dia)</span>
-<span id="cb125-12"><a></a></span>
-<span id="cb125-13"><a></a><span class="fu">head</span>(df)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 11
+6  2019     1     1
+```
+
+
+:::
+:::
+
+
+## Calculando os acumulados
+
+
+::: {.cell}
+
+```{.r .cell-code}
+df <- df |>
+  select(- Dia)
+
+df <- df |>
+  pivot_longer(
+    cols = starts_with("Chuva"),
+    names_to = "Dia",
+    values_to = "Chuva"
+  ) |>
+  mutate(Dia = as.double(str_replace(Dia, "Chuva", ""))) |>
+  arrange(Data, Dia)
+
+head(df)
+```
+
+::: {.cell-output .cell-output-stdout}
+
+```
+# A tibble: 6 × 11
   EstacaoCodigo Data       Maxima Total DiaMaxima NumDiasDeChuva TotalAnual
-          &lt;dbl&gt; &lt;date&gt;      &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;          &lt;dbl&gt;      &lt;dbl&gt;
+          <dbl> <date>      <dbl> <dbl>     <dbl>          <dbl>      <dbl>
 1        734006 1901-01-01     26  27.4        31              2       735.
 2        734006 1901-01-01     26  27.4        31              2       735.
 3        734006 1901-01-01     26  27.4        31              2       735.
 4        734006 1901-01-01     26  27.4        31              2       735.
 5        734006 1901-01-01     26  27.4        31              2       735.
 6        734006 1901-01-01     26  27.4        31              2       735.
-# ℹ 4 more variables: Ano &lt;dbl&gt;, Mês &lt;dbl&gt;, Dia &lt;dbl&gt;, Chuva &lt;dbl&gt;</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb127"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb127-1"><a></a>final  <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(<span class="st">&quot;2019-04-01&quot;</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb128"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb128-1"><a></a>acumulados <span class="ot">&lt;-</span> <span class="cf">function</span>(dados, data_final) {</span>
-<span id="cb128-2"><a></a>  dados <span class="ot">&lt;-</span> dados <span class="sc">|&gt;</span></span>
-<span id="cb128-3"><a></a>    <span class="fu">mutate</span>(</span>
-<span id="cb128-4"><a></a>      Período <span class="ot">=</span> <span class="fu">between</span>(Data, data_final <span class="sc">-</span> <span class="fu">days</span>(<span class="dv">360</span>), data_final)</span>
-<span id="cb128-5"><a></a>    )</span>
-<span id="cb128-6"><a></a>  acumulado <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="cn">NA</span>, <span class="at">times =</span> <span class="fu">nrow</span>(dados))</span>
-<span id="cb128-7"><a></a>  pos <span class="ot">&lt;-</span> <span class="fu">which</span>(dados<span class="sc">$</span>Período)</span>
-<span id="cb128-8"><a></a>  acumulado[pos[<span class="dv">8</span><span class="sc">:</span><span class="fu">length</span>(pos)]] <span class="ot">&lt;-</span> <span class="fu">cumsum</span>(teste<span class="sc">$</span>Chuva[pos[<span class="dv">8</span><span class="sc">:</span><span class="fu">length</span>(pos)]])</span>
-<span id="cb128-9"><a></a></span>
-<span id="cb128-10"><a></a>  dados <span class="sc">|&gt;</span></span>
-<span id="cb128-11"><a></a>    <span class="fu">mutate</span>(<span class="at">Acumulado =</span> acumulado)</span>
-<span id="cb128-12"><a></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="visualização-de-dados-com-ggplot" class="slide level2">
-<h2>Visualização de dados com ggplot</h2>
+# ℹ 4 more variables: Ano <dbl>, Mês <dbl>, Dia <dbl>, Chuva <dbl>
+```
+
+
+:::
+:::
+
+::: {.cell}
+
+```{.r .cell-code}
+final  <- as.Date("2019-04-01")
+```
+:::
+
+::: {.cell}
+
+```{.r .cell-code}
+acumulados <- function(dados, data_final) {
+  dados <- dados |>
+    mutate(
+      Período = between(Data, data_final - days(360), data_final)
+    )
+  acumulado <- rep(NA, times = nrow(dados))
+  pos <- which(dados$Período)
+  acumulado[pos[8:length(pos)]] <- cumsum(teste$Chuva[pos[8:length(pos)]])
+
+  dados |>
+    mutate(Acumulado = acumulado)
+}
+```
+:::
+
+
+## Visualização de dados com ggplot -->
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">

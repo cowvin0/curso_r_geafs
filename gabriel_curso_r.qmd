@@ -657,7 +657,7 @@ expectativa de vida maior que 72 anos.
 h) Adicione ao data frame dados duas linhas com a média de
 todas as variáveis e variâncias, respectivamente.
 
-## Controle de fluxo
+<!-- ## Controle de fluxo
 
 ## Instrução if {.smaller}
 
@@ -795,4 +795,4 @@ acumulados <- function(dados, data_final) {
 }
 ```
 
-## Visualização de dados com ggplot
+## Visualização de dados com ggplot -->
