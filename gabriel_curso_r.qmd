@@ -795,4 +795,4 @@ acumulados <- function(dados, data_final) {
 }
 ```
 
-## Visualização de dados com ggplot -->
+## Visualização de dados com ggplot a -->
